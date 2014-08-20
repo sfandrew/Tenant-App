@@ -12,4 +12,6 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-datepicker
+ *= require dynamic_forms_engine/application
  */

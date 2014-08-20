@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount DynamicFormsEngine::Engine => "/dynamic_forms_engine"
+
   devise_for :users
   resources :users
 

@@ -29,6 +29,11 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem 'dynamic_forms_engine', path: '../dynamic-forms-engine'
+
+gem 'bootstrap-datepicker-rails'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
