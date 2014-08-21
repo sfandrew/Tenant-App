@@ -25,7 +25,7 @@
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li class="active"><%= link_to  "Home", dynamic_forms_engine.dynamic_form_entries_path %></li>
-					<li><a href="#about">New Application</a></li>
+					<li><%= link_to "Start Rental App", dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id =>1) %></li>
 					<!-- li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">

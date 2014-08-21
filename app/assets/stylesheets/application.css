@@ -17,10 +17,18 @@
  */
 
 body{
-	margin-top: 80px;
+	margin-top: 70px;
 }
 
 a.navbar-brand {
 	color: #000;
 	font-weight: bold;
+}
+
+.clear{
+	clear: both;
+}
+
+.spacer{
+	height: 20px;
 }
