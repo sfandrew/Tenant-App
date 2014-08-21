@@ -11,7 +11,24 @@
  * file per style scope.
  *
  *= require_tree .
- *= require_self
  *= require bootstrap-datepicker
  *= require dynamic_forms_engine/application
+  *= require_self
  */
+
+body{
+	margin-top: 70px;
+}
+
+a.navbar-brand {
+	color: #000;
+	font-weight: bold;
+}
+
+.clear{
+	clear: both;
+}
+
+.spacer{
+	height: 20px;
+}
