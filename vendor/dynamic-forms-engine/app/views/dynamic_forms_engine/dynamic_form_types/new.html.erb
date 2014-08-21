@@ -1,0 +1,26 @@
+<%= form_for(@dynamic_form_type, :html => {:class => "form-horizontal"}) do |f| %>
+	<h3>What type of form is this?</h3>
+	<div class="col-sm-2">
+		<%= f.select :form_type,['Default-form','Multi-step'],{:disabled => 'Choose Form', :include_blank => 'Choose form'}, {:class => 'form-control input-medium form-type'} %>
+	</div>
+	<div class="default-form">
+		<h1>New Form</h1>
+		<%= render 'default_form' %>
+	</div>
+
+<% end %>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.default-form').hide();
+		$('.form-type').change(function(){
+			$('.default-form').show();
+			$('h3').hide();
+		});
+		if ( $('#errors').length > 0 ){
+			$('.default-form').show();
+			$('h3').hide();
+		}
+	});
+</script>
+
