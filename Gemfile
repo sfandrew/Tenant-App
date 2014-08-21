@@ -31,7 +31,7 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
-gem 'dynamic_forms_engine', path: '../dynamic-forms-engine'
+gem 'dynamic_forms_engine', path: 'vendor/dynamic-forms-engine'
 
 gem 'bootstrap-datepicker-rails'
 
