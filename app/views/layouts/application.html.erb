@@ -41,9 +41,15 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<%= link_to main_app.destroy_user_session_path do %>
-		                  Logout <i class="fa fa-sign-out fa-1x"></i> 
-		                <% end %>
+						<% if user_signed_in? %>
+							<%= link_to(main_app.destroy_user_session_path, :id => 'logout',  :method=>'delete') do %>
+			                 	Logout  <span class="glyphicon glyphicon-log-out"></span>
+			                <% end %>
+			            <% else %>
+							<%= link_to(main_app.new_user_session_path, :id => 'login') do %>
+			                 	Login <span class="glyphicon glyphicon-log-in"></span> 
+			                <% end %>
+			            <% end %>
             		</li>
 				</ul>
 			</div><!--/.nav-collapse -->
