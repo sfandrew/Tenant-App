@@ -25,13 +25,18 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+group :development do 
+	gem 'mysql2'
+end
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
 
 gem 'devise'
 
-gem 'dynamic_forms_engine', git: "https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git"
+gem 'dynamic_forms_engine', :path => '../dynamic-forms-engine'
+#, git: "https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git"
 
 gem 'bootstrap-datepicker-rails'
 
@@ -50,11 +55,9 @@ gem 'rails_12factor', group: :production
 # gem 'debugger', group: [:development, :test]
 
 
-ruby "2.1.1"
+#ruby "2.1.1"
 
-group :development do 
-	gem 'mysql2'
-end
+
 
 gem 'pg', group: :production
 # Use SCSS for stylesheets
