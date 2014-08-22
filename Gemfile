@@ -35,8 +35,9 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
-gem 'dynamic_forms_engine', :path => '../dynamic-forms-engine'
-#, git: "https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git"
+gem 'dynamic_forms_engine', git: "https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git"
+# PROD , git: "https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git"
+# DEV , :path => '../dynamic-forms-engine'
 
 gem 'bootstrap-datepicker-rails'
 
