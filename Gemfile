@@ -51,6 +51,12 @@ gem 'bootstrap-datepicker-rails'
 
 #ruby "2.1.1"
 
+#DEV - Dynamic Form Gem (via up one dir)
+gem 'dynamic_forms_engine', :path => '../dynamic-forms-engine'
+
+#PROD - Dynamic Form Gem via GIT (James)
+# gem 'dynamic_forms_engine', git: "https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git"
+
 
 group :development do 
 
@@ -59,8 +65,7 @@ group :development do
 	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 	gem 'spring'
 
-	#Dynamic Form Gem (via up one dir)
-	gem 'dynamic_forms_engine', :path => '../dynamic-forms-engine'
+
 
 end
 
@@ -70,7 +75,5 @@ group :production do
 
 	gem 'rails_12factor'
 
-	#Dynamic Form Gem via GIT (James)
-	gem 'dynamic_forms_engine', git: "https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git"
 
 end
