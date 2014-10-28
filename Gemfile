@@ -30,8 +30,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # User auth
 gem 'devise'
 
-gem 'bootstrap-datepicker-rails'
-
+# Comes from gem already.
+# gem 'bootstrap-datepicker-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -49,26 +49,22 @@ gem 'bootstrap-datepicker-rails'
 #ruby "2.1.1"
 
 #DEV - Dynamic Form Gem (via up one dir)
-#gem 'dynamic_forms_engine', :path => '../dynamic-forms-engine'
+gem 'dynamic_forms_engine', :path => '../dynamic-forms-engine'
 
 #PROD - Dynamic Form Gem via GIT (James)
-gem 'dynamic_forms_engine', git: "https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git"
+#gem 'dynamic_forms_engine', git: "https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git"
 
 
 group :development do 
 
 	gem 'mysql2'
-
 	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 	gem 'spring'
-
 
 end
 
 
 group :production do 
 	gem 'pg'
-
 	gem 'rails_12factor'
-
 end
