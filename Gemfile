@@ -30,10 +30,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # User auth
 gem 'devise'
 
-
-
 gem 'bootstrap-datepicker-rails'
-
 
 
 # Use ActiveModel has_secure_password
@@ -66,7 +63,6 @@ group :development do
 	gem 'spring'
 
 
-
 end
 
 
@@ -74,6 +70,5 @@ group :production do
 	gem 'pg'
 
 	gem 'rails_12factor'
-
 
 end
