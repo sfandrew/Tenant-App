@@ -14,6 +14,6 @@
 //= require jquery_ujs
 //=# require turbolinks
 //= require bootstrap
-//=# require bootstrap-datepicker
+//= require bootstrap-datepicker
 //= require dynamic_forms_engine/application
 //= require_tree .
