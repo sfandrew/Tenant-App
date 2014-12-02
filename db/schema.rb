@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028213238) do
+ActiveRecord::Schema.define(version: 20141201224930) do
+
+  create_table "contacts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "contact_type"
+    t.integer  "contactable_id"
+    t.string   "contactable_type"
+    t.string   "name"
+    t.string   "company"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "uuid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "dynamic_forms_engine_dynamic_form_entries", force: true do |t|
     t.integer  "dynamic_form_type_id"

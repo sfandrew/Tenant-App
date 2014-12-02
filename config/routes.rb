@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :contactables
+
+  resources :contacts
+
   mount DynamicFormsEngine::Engine => "/dynamic_forms_engine"
 
   devise_for :users, :path_prefix => 'auth'

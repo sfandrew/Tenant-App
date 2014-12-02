@@ -1,0 +1,2 @@
+module ContactablesHelper
+end
