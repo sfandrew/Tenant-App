@@ -1,0 +1,42 @@
+<style type="text/css">
+	.row-contact{
+		padding-left: 0px
+	}
+	.row-contact .contact-remove{
+		padding-left: 0px;
+	}
+	
+</style>
+<fieldset class="row-contact">
+	<div class="col-sm-1">
+		<h3 style="
+    background: #f1f1f1;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 7px;
+    margin: 0;">1</h3>
+		<%= f.hidden_field :uuid, :class => "field_order" %>
+	</div>
+	
+	<div class="col-sm-2">
+		<%= f.text_field :first_name, data: {contacts: @contacts_hash, autocomplete_source: @contact_names}, :class => "form-control name-search", :placeholder => "Recipient name" %>
+	</div>
+	<div class="col-sm-2">
+	 	<%= f.text_field :company, :class => "form-control company-field", :placeholder => "Company name" %>
+	</div>
+  <div class="col-sm-2">
+    <%= f.text_field :email, :class => "form-control email-field", :placeholder => "Email" %>
+  </div>
+  <div class="col-sm-2">
+    <%= f.text_field :phone, :class => "form-control phone-field", :placeholder => "Phone" %>
+  </div>
+  <div class="col-sm-2">
+		<%= f.select :contact_type,["Property Manager","Landlord","Guarantor","Resident Manager","Roommate","Family","Other"], {:prompt => "Select Recipient",},{ :class => "form-control type-field" } %>
+	</div>
+	<div class="col-sm-1 contact-remove">	
+		<%= f.hidden_field :_destroy %>
+	<%= link_to "remove", '#', class: "remove_fields btn btn-danger" %>
+  </div>
+</fieldset>

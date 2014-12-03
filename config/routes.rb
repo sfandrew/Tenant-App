@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'apis/contact_field'
+
+  resources :attachments
+
   resources :contactables
 
   resources :contacts

@@ -1,0 +1,4 @@
+<% id = SecureRandom.random_number(100000) %>
+<%= fields_for "dynamic_form_entry[contacts_attributes][#{id}]", Contact.new do |builder| %>
+	<%= render 'contacts/contact_fields', f: builder %>
+<% end %>

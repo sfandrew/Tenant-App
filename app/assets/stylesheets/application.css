@@ -11,10 +11,10 @@
  * file per style scope.
  *
  *= require bootstrap
+ *= require_self
  *= require_tree .
  *=# require bootstrap-datepicker
  *= require dynamic_forms_engine/application
- *= require_self
  */
 
 body{
