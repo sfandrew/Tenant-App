@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  get 'apis/contact_field'
+  # get 'apis/contact_field'
 
   resources :attachments
 
   resources :contactables
 
   resources :contacts
+
+  get '/apis/:action', :controller => 'apis'
 
   mount DynamicFormsEngine::Engine => "/dynamic_forms_engine"
 

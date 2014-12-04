@@ -33,3 +33,6 @@ a.navbar-brand {
 .spacer{
 	height: 20px;
 }
+fieldset.dynamic-form-field {
+margin-bottom: 7px;
+}

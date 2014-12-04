@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202203150) do
+ActiveRecord::Schema.define(version: 20141203234504) do
 
   create_table "attachments", force: true do |t|
     t.integer  "user_id"
@@ -37,15 +37,18 @@ ActiveRecord::Schema.define(version: 20141202203150) do
   create_table "contacts", force: true do |t|
     t.integer  "user_id"
     t.string   "contact_type"
-    t.integer  "contactable_id"
-    t.string   "contactable_type"
-    t.string   "name"
+    t.string   "first_name"
     t.string   "company"
     t.string   "email"
     t.string   "phone"
     t.integer  "uuid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
   end
 
   create_table "dynamic_forms_engine_dynamic_form_entries", force: true do |t|

@@ -64,7 +64,7 @@ gem 'dynamic_forms_engine', :path => '../dynamic-forms-engine'
 
 
 group :development do 
-
+	gem 'meta_request'
 	gem 'mysql2'
 	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 	gem 'spring'
