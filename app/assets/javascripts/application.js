@@ -15,5 +15,10 @@
 //=# require turbolinks
 //= require bootstrap
 //= require bootstrap-datepicker/core
+// = require dynamic_forms_engine/dynamic_form_types
+// = require dynamic_forms_engine/dynamic_forms
+// = require dynamic_forms_engine/flashcanvas
+// = require dynamic_forms_engine/jSignature.min
+// = require dynamic_forms_engine/jquery-ui-1.10.4.custom.min
 //= require_tree
 //= require_self

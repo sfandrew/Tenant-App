@@ -6,6 +6,7 @@ Rails.application.config.assets.precompile += %w( dynamic_forms_engine/dynamic_f
 Rails.application.config.assets.precompile += %w( dynamic_forms_engine/dynamic_form_entries_print.js )
 
 
+
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )

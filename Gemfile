@@ -32,6 +32,7 @@ gem 'devise'
 
 gem 'bootstrap-datepicker-rails'
 
+gem 'pry'
 gem 'rmagick', '2.13.2'
 gem 'carrierwave'
 gem 'carrierwave_direct'

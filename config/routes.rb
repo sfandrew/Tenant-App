@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # get 'apis/contact_field'
 
   resources :attachments
 
@@ -14,7 +13,7 @@ Rails.application.routes.draw do
   devise_for :users, :path_prefix => 'auth'
   resources :users
 
-  root 'dynamic_forms_engine/dynamic_form_entries#index'
+  root 'home#home_page'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
