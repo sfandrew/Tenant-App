@@ -12,7 +12,7 @@ CarrierWave.configure do |config|
   # export AWS_ACCESS_KEY_ID=AKIAJCYZENE5L2JJ5R5A
   # export AWS_ACCESS_SECRET_KEY_ID=rYYQHUQB5qxbvSoA9EU7yEQbBJJLkPOBMMORk4UA
   # export S3_BUCKET=tenant-dev
-  config.fog_directory  = ENV['S3_BUCKET']                            # required
+  config.fog_directory  = 'tenant-dev'                            # required
   config.fog_public     = false                                   # optional, defaults to true
     # optional, defaults to {}
 end

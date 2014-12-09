@@ -8,14 +8,11 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Tenant Today!</a>
+			<a class="navbar-brand" href="<%= dynamic_forms_engine.dynamic_form_entries_path %>">Tenant Today!</a>
 		</div>
 
 		<div class="navbar-collapse collapse" id ="navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class="active">
-					<%= link_to  "Home", dynamic_forms_engine.dynamic_form_entries_path %>
-				</li>
 				<li>
 					<%= link_to "Start Rental App", dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id =>1) %>
 				</li>
