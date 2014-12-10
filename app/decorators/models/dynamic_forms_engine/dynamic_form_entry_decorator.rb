@@ -33,6 +33,7 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
 
   def create_attachment
         self.properties.each_pair do |property_id, property_value|
+         
           field = DynamicFormsEngine::DynamicFormField.find(property_id)
           if field.attachment?
             attachment_id = self.id || DynamicFormsEngine::DynamicFormEntry.last.id+1
