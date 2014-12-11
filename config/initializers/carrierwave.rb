@@ -11,12 +11,10 @@ CarrierWave.configure do |config|
   # set aws environment variables on your terminal
   # export S3_KEY=AKIAJCYZENE5L2JJ5R5A
   # export S3_SECRET=rYYQHUQB5qxbvSoA9EU7yEQbBJJLkPOBMMORk4UA
-  # to make settings permanent
-  # vi ~/.bash_proflle
-  # S3_KEY=AKIAJCYZENE5L2JJ5R5A
-  # S3_SECRET=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
-  #  export S3_KEY
-  #  export S3_SECRET
+  # to make settings permanent, create new file under /etc/profile.d ex:aws_keys.sh
+  # vi /etc/profile.d/aws_keys.sh
+  # export S3_KEY=AKIAJCYZENE5L2JJ5R5A
+  # export S3_SECRET=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
   config.fog_directory  = 'tenant-dev'                            # required
   config.fog_public     = false                                   # optional, defaults to true
     # optional, defaults to {}
