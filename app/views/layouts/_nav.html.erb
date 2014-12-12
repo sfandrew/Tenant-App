@@ -14,7 +14,12 @@
 		<div class="navbar-collapse collapse" id ="navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li>
-					<%= link_to "Start Rental App", dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id =>1) %>
+					<!-- production -->
+					<% if current_user.email == "wayne@sfrent.net" %> 
+						<%= link_to "Start building Inspection", dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id =>17) %>
+					<% else %>
+						<%= link_to "Start Rental App", dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id =>1) %>
+					<% end %>
 				</li>
 				<li>
 					<%= link_to "New Form", dynamic_forms_engine.new_dynamic_form_type_path %>
