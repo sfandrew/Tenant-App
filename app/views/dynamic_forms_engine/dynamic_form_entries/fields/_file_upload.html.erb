@@ -3,11 +3,16 @@
 <div class="col-md-<%= field.field_width %>">
 <%= f.label field.id, field.name.humanize, :class => "col-md-2 control-label" %>
   <div class="col-md-10">
-    <%= fields_for "dynamic_form_entry[attachments_attributes][#{field.id}]", Attachment.new do |attachment| %>
+    <%= fields_for "dynamic_form_entry[attachments_attributes][#{field.id}]", 
+        @dynamic_form_entry.attachments.build, :multipart => true  do |attachment| %>
+        
       <%= attachment.hidden_field :content_name, value: field.name %>
+
       <%= attachment.file_field :filename, :class => "form-control uploader" %>
       <%= attachment.hidden_field :filename_cache %>
+
     <% end %>
+    
   </div>
 </div>
 

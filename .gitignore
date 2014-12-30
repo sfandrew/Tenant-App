@@ -17,3 +17,7 @@
 
 # Ignore engines
 /vendor/dynamic-forms-engine/*
+
+
+# Ignore file uploads
+/public/uploads/tmp

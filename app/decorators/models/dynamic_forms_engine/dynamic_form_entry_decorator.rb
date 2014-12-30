@@ -1,15 +1,20 @@
 DynamicFormsEngine::DynamicFormEntry.class_eval do
   has_many  :contacts, through: :contactables, :dependent => :destroy
   has_many  :contactables, :as => :contactable, :dependent => :destroy
+  has_many :attachments, :as => :attachable, :dependent => :destroy
+
   accepts_nested_attributes_for :contacts,  :allow_destroy => :true
+  accepts_nested_attributes_for :attachments, :allow_destroy => :true, reject_if: proc { |attributes| attributes["filename"].nil? }
 
   before_validation :new_contacts_validation
-  after_validation :create_attachment, :if => Proc.new { |properties| !properties.properties.nil? }
+
+  # after_validation :create_attachment, :if => Proc.new { |properties| !properties.properties.nil? }
   # after_validation :email_user
   # before_save :email_contacts
   # before_validation :new_contacts
   #before_update :new_contacts
    
+  
 
   def new_contacts_validation
     if !self.contacts.empty?
