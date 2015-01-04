@@ -19,7 +19,9 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   end
 
   def cache_dir
-    "tmp/uploads/cache/#{model.id}"
+    
+    "tmp/uploads/cache/7/#{model.id}"
+    
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

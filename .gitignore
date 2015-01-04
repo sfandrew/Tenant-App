@@ -21,3 +21,4 @@
 
 # Ignore file uploads
 /public/uploads/tmp
+/public/tmp/uploads

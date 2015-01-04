@@ -13,6 +13,7 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
   # before_save :email_contacts
   # before_validation :new_contacts
   #before_update :new_contacts
+  
    
   
 
