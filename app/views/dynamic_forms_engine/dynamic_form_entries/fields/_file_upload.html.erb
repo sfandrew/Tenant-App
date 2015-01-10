@@ -6,7 +6,7 @@
 
 
 
-<div class="col-md-<%= field.field_width %>">
+<!-- <div class="col-md-<%= field.field_width %>">
 <%= f.label field.id, field.name.humanize, :class => "col-md-2 control-label" %>
   <div class="col-md-10">
     <%= fields_for "dynamic_form_entry[attachments_attributes][#{field.id}]", 
@@ -22,7 +22,7 @@
     <% end %>
     
   </div>
-</div>
+</div> -->
 
 
 
@@ -60,22 +60,22 @@
 
 
 
-<% if false %>
-<!-- <div class="col-md-<%= field.field_width %>">
+
+<div class="col-md-<%= field.field_width %>">
 <%= f.label field.id, field.name.humanize, :class => "col-md-2 control-label" %>
   <div class="col-md-10">
   
   <% if @dynamic_form_entry.attachments.size != 0 %>
     <%= fields_for "dynamic_form_entry[attachments_attributes][#{field.id}]", 
-          field.attachments.first, :multipart => true  do |attachment| %>
-          
+          att = @dynamic_form_entry.attachments.find{|x| x.content_name == field.name}, :multipart => true  do |attachment| %>
+        <%=att.as_json %>  
         <%= attachment.hidden_field :content_name, value: field.name %>
 
         <%= attachment.file_field :filename, :class => "form-control uploader" %>
-        <%= attachment.hidden_field :filename_cache, value: attachment.object.filename_url %>
+        <%= attachment.hidden_field :filename_cache, value: (attachment.object.filename_url_or_cached_url rescue '') %>
 
         <%# p attachment.object.as_json %>
-        <%= image_tag(attachment.object.filename_url,size: "100" ) if attachment.object.filename? %>
+        <%= image_tag(attachment.object.filename_url_or_cached_url,size: "100" ) if attachment.object.try(:filename) %>
 
       <% end %>
     
@@ -96,5 +96,4 @@
     
   </div>
 </div>
- -->
- <% end %>
+ 
