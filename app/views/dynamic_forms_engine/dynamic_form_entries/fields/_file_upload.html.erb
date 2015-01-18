@@ -37,8 +37,8 @@
     <%# f.hidden_field :field_cache, value: field.filename_cache %>
 
     <% if defined?(errors) and errors.present? %>
-		<small style="color:red"><%= errors.join(', ') %></small>
-	 <% end %>
+    <small style="color:red"><%= errors.join(', ') %></small>
+   <% end %>
   </div>
 
   <% if !@dynamic_form_entry.new_record?  %>
@@ -49,13 +49,15 @@
   <% end %>
 
   <% if field.required? %>
-	 <span class="col-xs-1 required required-field">*</span>
+   <span class="col-xs-1 required required-field">*</span>
   <% end %>
 
 </div> -->
 
 
 
+
+<% @index = -1 %>
 
 
 
@@ -66,7 +68,7 @@
   <div class="col-md-10">
   
   <% if @dynamic_form_entry.attachments.size != 0 %>
-    <%= fields_for "dynamic_form_entry[attachments_attributes][#{field.id}]", 
+    <%= fields_for "dynamic_form_entry[attachments_attributes][#{@index += 1}]", 
           att = @dynamic_form_entry.attachments.find{|x| x.content_name == field.name}, :multipart => true  do |attachment| %>
         <%=att.as_json %>  
         <%= attachment.hidden_field :content_name, value: field.name %>

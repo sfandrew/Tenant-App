@@ -15,13 +15,13 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/test/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    # "uploads/test/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    ""
   end
 
   def cache_dir
-    
-    "tmp/uploads/cache/7/#{model.id}"
-    
+    # "tmp/uploads/cache/7/#{model.id}"
+    "tmp/uploads/cache"
   end
 
 
