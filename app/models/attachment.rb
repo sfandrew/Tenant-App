@@ -1,7 +1,7 @@
 class Attachment < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :attachable, :polymorphic => true, :dependent => :destroy
-	attr_accessor :filename_cache
+	# attr_accessor :filename_cache
 
 	mount_uploader :filename, AttachmentUploader
 	validates :filename, allow_blank: true, format:{

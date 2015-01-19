@@ -57,7 +57,7 @@
 
 
 
-<% @index = -1 %>
+<% @attachment_index ||= -1 %>
 
 
 
@@ -68,9 +68,9 @@
   <div class="col-md-10">
   
   <% if @dynamic_form_entry.attachments.size != 0 %>
-    <%= fields_for "dynamic_form_entry[attachments_attributes][#{@index += 1}]", 
+    <%= fields_for "dynamic_form_entry[attachments_attributes][#{@attachment_index += 1}]", 
           att = @dynamic_form_entry.attachments.find{|x| x.content_name == field.name}, :multipart => true  do |attachment| %>
-        <%=att.as_json %>  
+        <%#att.as_json %>  
         <%= attachment.hidden_field :content_name, value: field.name %>
 
         <%= attachment.file_field :filename, :class => "form-control uploader" %>
