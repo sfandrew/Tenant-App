@@ -17,3 +17,5 @@
 
 # Ignore engines
 /vendor/dynamic-forms-engine/*
+
+/config/database.yml

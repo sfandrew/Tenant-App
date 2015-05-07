@@ -7,18 +7,29 @@
 
 #MYSQL
 development:
-  adapter: mysql2
-  database: tenant_application_development
-  username: root
-  password: fsckj00
+  adapter: postgresql #mysql2
+  database: tenant_app_development #tenant_application_development #mysql db name
+  username: sfrent_tenant_app #root mysql2
+  password: cashrules #fsckj00 mysql2
   pool: 5
-  socket: /var/lib/mysql/mysql.sock
+  host: localhost
+  encoding: unicode
+  # socket: /var/lib/mysql/mysql.sock #mysql2
+
+test:
+  adapter: postgresql
+  database: tenant_app_development #tenant_application_development #mysql db name
+  username: sfrent_tenant_app #root #mysql
+  password:  cashrules #fsckj00 #mysql
+  pool: 5
+  host: localhost
+  encoding: unicode
 
 #SQLITE
-default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
+# default: &default
+#   adapter: sqlite3
+#   pool: 5
+#   timeout: 5000
 # development:
 #   <<: *default
 #   database: db/development.sqlite3
@@ -26,9 +37,9 @@ default: &default
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: db/test.sqlite3
+# test:
+#   <<: *default
+#   database: db/test.sqlite3
 
 production:
   adapter: postgresql
