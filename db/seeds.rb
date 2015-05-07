@@ -1,8 +1,5 @@
-admin_user = User.create!([
-  {name: nil, email: "applications@sfrent.net", encrypted_password: "$2a$10$qhvs5.pW3PC7ZAkYcL7ekeuk.l3Xz0TnYmnGevSana07nSx4CAzZO", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 5, current_sign_in_at: "2015-05-07 17:29:57", last_sign_in_at: "2015-05-05 00:05:16", current_sign_in_ip: "192.168.2.121", last_sign_in_ip: "127.0.0.1"}
-])
 new_type = DynamicFormsEngine::DynamicFormType.create!([
-  {name: "Tenant Application", description: "Complete applications are time sensitive with priority given to those with earnest money deposits. When your application is complete please submit it. Any questions please e-mail applications@sfrent.net", uuid: nil, user_id: admin_user.id, form_type: "Multi-step", is_public: false}
+  {name: "Tenant Application", description: "Complete applications are time sensitive with priority given to those with earnest money deposits. When your application is complete please submit it. Any questions please e-mail applications@sfrent.net", uuid: nil, user_id: 1, form_type: "Multi-step", is_public: false}
 ])
 DynamicFormsEngine::DynamicFormField.create!([
   {dynamic_form_type_id: new_type.id, field_order: 0, name: "Personal Info", field_type: "field_group", required: false, content_meta: "", included_in_report: false, field_width: "12"},
