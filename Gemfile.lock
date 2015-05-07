@@ -1,6 +1,6 @@
 GIT
   remote: https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git
-  revision: d8aa97f0c6d59c415f0225ce175999e755bd4893
+  revision: 8330442dbd25a48d2efe6ea44a993d6a8f887f49
   specs:
     dynamic_forms_engine (0.0.3)
       bootstrap-datepicker-rails (>= 1.1.1.11)

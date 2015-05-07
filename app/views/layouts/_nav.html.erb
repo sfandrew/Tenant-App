@@ -22,7 +22,7 @@
 					<% end %>
 				</li>
 				<li>
-					<%= link_to "New Form", dynamic_forms_engine.new_dynamic_form_type_path  if current_user.email == "applications@sfrent.net" %>
+					<%= link_to "New Form", dynamic_forms_engine.new_dynamic_form_type_path  if user_signed_in? && current_user.email == "applications@sfrent.net" %>
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
