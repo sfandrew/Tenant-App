@@ -18,7 +18,7 @@
 					<% if user_signed_in? && current_user.email == "wayne@sfrent.net" %> 
 						<%= link_to "Start building Inspection", dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id =>17) %>
 					<% else %>
-						<%= link_to "Start Rental App", dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.env.development? ? 1 : 21) %>
+						<%= link_to "Start Rental App", dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.env.development? ? 1 : 22) %>
 					<% end %>
 				</li>
 				<li>
