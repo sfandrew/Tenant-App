@@ -16,6 +16,8 @@
 		<%= yield %>
 	</div>
 
+	<%= render partial: 'buildings/building_apartments' if @building_apartments.present? %>
+
 	<footer class="container text-center">
 		&copy; 2014 Incu-tech, LLC. 
 	</footer>
