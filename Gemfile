@@ -34,6 +34,8 @@ gem 'devise'
 
 # seed data from db
 gem 'seed_dump'
+#api for entries
+gem 'active_model_serializers'
 
 gem 'bootstrap-datepicker-rails'
 

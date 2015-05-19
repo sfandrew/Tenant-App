@@ -1,4 +1,7 @@
 DynamicFormsEngine::DynamicFormEntriesController.class_eval do
+
+	http_basic_authenticate_with name: 'tenant_app', password: 'sfrent', only: :tenant_applications
+
 	require "net/http"
 	require "uri"
 
@@ -27,5 +30,12 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
   		request = Net::HTTP::Get.new(uri.request_uri)
   		request.basic_auth('tenant_app','sfrent')
   		@building_apartments = http.request(request).body
+  	end
+
+  	def tenant_applications
+  		@all_entries = DynamicFormsEngine::DynamicFormEntry.all
+  		respond_to do |format|
+  			format.json { render json: @all_entries }
+  		end
   	end
 end

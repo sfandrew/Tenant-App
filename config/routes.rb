@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   get '/apis/:action', :controller => 'apis'
 
+
+
   mount DynamicFormsEngine::Engine => "/dynamic_forms_engine"
+
+  get 'tenant_applications' => 'dynamic_forms_engine/dynamic_form_entries#tenant_applications', as: 'tenant_applications'
 
   devise_for :users, :path_prefix => 'auth'
   resources :users
