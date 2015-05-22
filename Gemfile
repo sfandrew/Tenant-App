@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 
@@ -29,6 +31,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # User auth
 gem 'devise'
+
+# seed data from db
+gem 'seed_dump'
+#api for entries
+gem 'active_model_serializers'
 
 gem 'bootstrap-datepicker-rails'
 
@@ -66,7 +73,8 @@ gem 'dynamic_forms_engine', :path => '../dynamic-forms-engine'
 
 group :development do 
 	gem 'meta_request'
-	gem 'mysql2'
+	gem 'pg'
+	# gem 'mysql2'
 	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 	gem 'spring'
 	gem 'rails-footnotes', '~> 4.0'
@@ -75,10 +83,8 @@ group :development do
 
 end
 
-
-
-
 group :production do 
 	gem 'pg'
 	gem 'rails_12factor'
+	gem 'puma'
 end

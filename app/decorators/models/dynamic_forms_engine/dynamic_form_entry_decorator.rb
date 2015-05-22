@@ -72,6 +72,12 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
   	end
   end
 
+  def building_name(building_id,buildings_object)
+    json_buildings = JSON.parse(buildings_object)
+    building = json_buildings["buildings"].find { |building|  building_id.to_i == building["id"] } 
+    building["name"] 
+  end
+
 
 
 end

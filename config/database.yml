@@ -8,11 +8,20 @@
 #MYSQL
 development:
   adapter: mysql2
-  database: tenant_application_development
+  database: tenant_application_development 
   username: root
   password: fsckj00
   pool: 5
   socket: /var/lib/mysql/mysql.sock
+
+test:
+  adapter: mysql2
+  database: tenant_application_development
+  username: root
+  password: fsckj00
+  pool: 5
+  host: localhost
+  encoding: unicode
 
 #SQLITE
 default: &default
