@@ -6,7 +6,7 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
 	require "uri"
 
 	before_filter :autocomplete_feature, only: [:new, :edit,:create, :update]
-	before_filter :get_buildings, only: [:new, :edit, :create, :update, :show]
+	#before_filter :get_buildings, only: [:new, :edit, :create, :update, :show]
 	before_filter :get_contacts, only: [:show]
 
 
