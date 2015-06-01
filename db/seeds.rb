@@ -1,7 +1,7 @@
 new_type = DynamicFormsEngine::DynamicFormType.new(
   {name: "Tenant  Application", description: "Complete applications are time sensitive with priority given to those with earnest money deposits. When your application is complete please submit it. Any questions please e-mail applications@sfrent.net", uuid: nil, user_id: 1, form_type: "Multi-step", is_public: false}
 )
-new_type.fields.build!([
+new_type.fields.build([
   {dynamic_form_type_id: 1, field_order: 0, name: "Personal Info", field_type: "field_group", required: false, content_meta: "", included_in_report: false, field_width: "12"},
   {dynamic_form_type_id: 1, field_order: 1, name: "First Name: ", field_type: "text_field", required: true, content_meta: "", included_in_report: false, field_width: "6"},
   {dynamic_form_type_id: 1, field_order: 2, name: "Last Name:", field_type: "text_field", required: true, content_meta: "", included_in_report: false, field_width: "6"},
