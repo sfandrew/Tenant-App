@@ -13,10 +13,14 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
   # before_save :email_contacts
   # before_validation :new_contacts
   #before_update :new_contacts
-  
-   
-  
 
+
+  def find_attachment(field_id)
+    if attachments.present?
+      attachments.find{|x| x.content_meta == field_id.to_s }
+    end
+  end
+   
   def new_contacts_validation
     if !self.contacts.empty?
       current_user_contacts = self.user.contacts.pluck(:email)
