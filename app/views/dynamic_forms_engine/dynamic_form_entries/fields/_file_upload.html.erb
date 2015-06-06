@@ -6,25 +6,33 @@
 
 <div class="col-md-<%= field.field_width %>">
 <%= f.label field.id, field.name.humanize, :class => "col-md-2 control-label" %>
-<%= f.hidden_field field.id %>
+<%= f.hidden_field field.id, :value => field.id %>
+<%# raise %>
 
   <div class="col-md-10">
   
   <% if @dynamic_form_entry.attachments.size != 0 %>
 
     <%= fields_for "dynamic_form_entry[attachments_attributes][#{@attachment_index += 1}]", 
-
           @dynamic_form_entry.find_attachment(field.id), :multipart => true  do |attachment| %>
         
-        <%= attachment.hidden_field :content_name, value: field.name %>
         <%= attachment.hidden_field :content_meta, value: field.id %>
+        <% if attachment.object %>
+          <%= attachment.hidden_field :id, value: attachment.object.id %>
+          <%= attachment.label 'Delete' if attachment.object.id %>
+          <%= attachment.check_box :remove_filename if attachment.object.id %>
+          <%= attachment_preview(attachment) %>
+        <% else %>
+          <%= attachment.file_field :filename, :class => "form-control uploader" %>
+        <% end %>
 
-        <%= attachment.file_field :filename, :class => "form-control uploader" %>
+        <%# attachment.hidden_field :id, value: attachment.object.id  if attachment.object %>
+
+        <%# attachment.file_field :filename, :class => "form-control uploader" unless attachment.object %>
         <%= attachment.hidden_field :filename_cache, value: (attachment.object.filename_url_or_cached_url rescue '') %>
+        <%# attachment.check_box :remove_filename %>
 
-        <%= attachment_preview(attachment) if attachment.object.try(:filename) %>
-        <%# link_to("Download", attachment.object.filename.url, class: 'btn btn-success') if attachment.object.try(:filename) %>
-        <%# image_tag(attachment.object.filename_url_or_cached_url,size: "100" ) if attachment.object.try(:filename) %>
+        <%# attachment_preview(attachment) if attachment.object.try(:filename) %>
 
       <% end %>
     
