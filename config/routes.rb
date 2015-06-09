@@ -14,7 +14,15 @@ Rails.application.routes.draw do
 
   get 'tenant_applications' => 'dynamic_forms_engine/dynamic_form_entries#tenant_applications', as: 'tenant_applications'
 
-  devise_for :users, :path_prefix => 'auth'
+
+  devise_for :users, :controllers => {:sessions => 'sessions', registrations: 'registrations' }
+
+
+
+  # devise_scope :user do
+    patch "/confirm" => "confirmations#confirm"
+  # end
+  #devise_for :users, :path_prefix => 'auth'
   resources :users
 
   root 'home#home_page'
