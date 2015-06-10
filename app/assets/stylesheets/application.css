@@ -33,3 +33,7 @@ a.navbar-brand {
 .spacer{
 	height: 20px;
 }
+
+/*sign up/login*/
+.panel-primary {
+	border-color: #C4CACF;

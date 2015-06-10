@@ -1,22 +1,10 @@
-<style type="text/css">
-
-.panel-primary {
-	border-color: #C4CACF;
-}
-#error_explanation li{
-	color: red
-}
-#error_explanation h2{
-	color: red
-}
-</style>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
     <div class="row">
         <div class="col-md-5 col-md-offset-3">
             <div class="panel panel-primary">
 	            <div class="panel-heading">
-	             	<div class="panel-title">Sign up</div>
+	             	<div class="panel-title"><strong>Sign up</strong></div>
 	             	<div style="float:right; font-size: 100%; position: relative; top:-10px;">
 	             		<%= link_to "Sign in", new_session_path(resource_name), {:style => 'color:white;'} %>
 	             	</div>
@@ -41,23 +29,13 @@
                             <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "Re-type your password" %>
                         </div>
                     </div>
-                    <div class="form-group">
-                    	<div class="input-group">
-                    		<div class="checkbox">
-		                    	<%= label_tag do %>
-		                    		<%= f.check_box :remember_me %>Remember me
-		                    	<% end %>
-                    		</div>
-                    	</div>   
-                    </div>
-
 
                     <%= f.submit "SUBMIT", :class => 'btn btn-success btn-block' %>
                     <div class="spacer"></div>
 
                     <div class="form-group">
                         <div class="col-md-12 control">
-                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">Didn't recieve confirmation email?
+                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">Didn't receive confirmation email?
                                 <%= link_to "Click here", new_confirmation_path(resource_name), :class => 'primary' %>
                             </div>
                         </div>
