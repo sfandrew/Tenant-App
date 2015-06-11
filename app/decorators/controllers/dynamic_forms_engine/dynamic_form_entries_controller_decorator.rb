@@ -35,7 +35,7 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
   	def tenant_applications
   		@all_entries = DynamicFormsEngine::DynamicFormEntry.all
   		respond_to do |format|
-  			format.json { render json: @all_entries }
+  			format.json { render json: @all_entries, root: false }
   		end
   	end
 end
