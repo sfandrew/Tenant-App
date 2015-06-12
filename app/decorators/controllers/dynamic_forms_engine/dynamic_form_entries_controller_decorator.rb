@@ -33,7 +33,7 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
   	end
 
   	def tenant_applications
-  		@all_entries = DynamicFormsEngine::DynamicFormEntry.all
+  		@all_entries = DynamicFormsEngine::DynamicFormEntry.where(:dynamic_form_type => DynamicFormsEngine::DynamicFormType.last)
   		respond_to do |format|
   			format.json { render json: @all_entries, root: false }
   		end
