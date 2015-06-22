@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  http_basic_authenticate_with name: 'tenant_app', password: 'sfrent'
+
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 

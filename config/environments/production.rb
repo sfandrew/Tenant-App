@@ -89,4 +89,9 @@ Rails.application.configure do
     :domain         => 'tenant-application.herokuapp.com', #eg: 'yourappname.herokuapp.com'
     :authentication => :plain,
   }
+
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :sender_address => %{"andrew@sfrent.net},
+  }
 end

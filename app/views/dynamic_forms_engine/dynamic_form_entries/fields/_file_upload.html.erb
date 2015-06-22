@@ -19,9 +19,10 @@
         <%= attachment.hidden_field :content_meta, value: field.id %>
         <% if attachment.object %>
           <%= attachment.hidden_field :id, value: attachment.object.id %>
-          <%= attachment.label 'Delete' if attachment.object.id %>
+          <%= attachment.label "Delete" if attachment.object.id %>
           <%= attachment.check_box :remove_filename if attachment.object.id %>
           <%= attachment_preview(attachment) %>
+
         <% else %>
           <%= attachment.file_field :filename, :class => "form-control uploader" %>
         <% end %>

@@ -49,4 +49,9 @@ Rails.application.configure do
     :authentication => :plain,
   }
 
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :sender_address => %{"andrew@sfrent.net},
+  }
+
 end

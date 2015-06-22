@@ -1,6 +1,6 @@
 GIT
   remote: https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git
-  revision: 134e07a238a98801e1ac75dcc0ad0d10822e6636
+  revision: 2b08b59c1e66c317d2ffb16bbd2ab006043ba3ac
   specs:
     dynamic_forms_engine (0.0.4)
       bootstrap-datepicker-rails (>= 1.1.1.11)
@@ -43,7 +43,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    autoprefixer-rails (5.2.0)
+    autoprefixer-rails (5.2.1)
       execjs
       json
     bcrypt (3.1.9)
@@ -55,7 +55,7 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-datepicker-rails (1.4.0)
       railties (>= 3.0)
-    bootstrap-sass (3.3.4.1)
+    bootstrap-sass (3.3.5)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
@@ -90,6 +90,9 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
+    exception_notification (4.1.1)
+      actionmailer (>= 3.0.4)
+      activesupport (>= 3.0.4)
     excon (0.40.0)
     execjs (2.5.2)
     fog (1.24.0)
@@ -146,7 +149,7 @@ GEM
       less (~> 2.6.0)
       sprockets (> 2, < 4)
       tilt
-    less-rails-bootstrap (3.3.4.0)
+    less-rails-bootstrap (3.3.5.0)
       less-rails (>= 2.6, <= 2.8)
     libv8 (3.16.14.7)
     mail (2.6.3)
@@ -174,7 +177,7 @@ GEM
       slop (~> 3.4)
     puma (2.11.2)
       rack (>= 1.1, < 2.0)
-    rack (1.5.3)
+    rack (1.5.5)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
     rack-test (0.6.3)
@@ -269,6 +272,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   dynamic_forms_engine!
+  exception_notification
   fog
   jbuilder (~> 2.0)
   jquery-rails
