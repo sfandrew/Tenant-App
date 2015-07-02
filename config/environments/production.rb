@@ -95,7 +95,7 @@ Rails.application.configure do
 
   Rails.application.config.middleware.use ExceptionNotification::Rack,
   :email => {
-    :sender_address => %{"Exception Notifier" andrew@sfrent.net},
+    :sender_address => %w{andrew@sfrent.net},
     :exception_recipients => %w{andrew@sfrent.net}
   }
 end
