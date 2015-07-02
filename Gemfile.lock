@@ -1,6 +1,6 @@
 GIT
   remote: https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git
-  revision: 978c7ad78db3c40fa23eb06fe77ef2e8d82b2689
+  revision: f49893186623cdae3c0961991a672c098bade8ea
   specs:
     dynamic_forms_engine (0.0.4)
       bootstrap-datepicker-rails (>= 1.1.1.11)
@@ -215,7 +215,7 @@ GEM
       tilt
     less-rails-bootstrap (3.3.5.0)
       less-rails (>= 2.6, <= 2.8)
-    libv8 (3.16.14.8)
+    libv8 (3.16.14.11)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     meta_request (0.3.4)

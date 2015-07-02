@@ -62,7 +62,9 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  # EXCEPTION NOTIFICATION GEM
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
@@ -70,6 +72,7 @@ Rails.application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
+
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
@@ -92,7 +95,7 @@ Rails.application.configure do
 
   Rails.application.config.middleware.use ExceptionNotification::Rack,
   :email => {
-    :sender_address => %{"andrew@sfrent.net},
+    :sender_address => %{"Exception Notifier" andrew@sfrent.net},
     :exception_recipients => %w{andrew@sfrent.net}
   }
 end
