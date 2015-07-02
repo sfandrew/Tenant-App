@@ -3,19 +3,18 @@
 
 <% @attachment_index ||= -1 %>
 
-
 <div class="col-md-<%= field.field_width %>">
 <%= f.label field.id, field.name.humanize, :class => "col-md-2 control-label" %>
 <%= f.hidden_field field.id, :value => field.id %>
 <%# raise %>
 
   <div class="col-md-10">
-  
+
   <% if @dynamic_form_entry.attachments.size != 0 %>
 
-    <%= fields_for "dynamic_form_entry[attachments_attributes][#{@attachment_index += 1}]", 
+    <%= fields_for "dynamic_form_entry[attachments_attributes][#{@attachment_index += 1}]",
           @dynamic_form_entry.find_attachment(field.id), :multipart => true  do |attachment| %>
-        
+
         <%= attachment.hidden_field :content_meta, value: field.id %>
         <% if attachment.object %>
           <%= attachment.hidden_field :id, value: attachment.object.id %>
@@ -36,11 +35,11 @@
         <%# attachment_preview(attachment) if attachment.object.try(:filename) %>
 
       <% end %>
-    
+
 
   <% else  %>
       <%= fields_for "dynamic_form_entry[attachments_attributes][#{field.id}]" do |attachment| %>
-        
+
         <%= attachment.hidden_field :content_name, value: field.name %>
 
         <%= attachment.file_field :filename, :class => "form-control uploader" %>
@@ -50,7 +49,9 @@
 
       <% end %>
     <% end %>
-    
+    <% if field.required? %>
+		<span class="col-xs-1 required required-field">*</span>
+  	<% end %>
+
   </div>
 </div>
- 

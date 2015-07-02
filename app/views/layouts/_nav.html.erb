@@ -15,10 +15,10 @@
 			<ul class="nav navbar-nav">
 				<li>
 					<!-- production -->
-					<% if user_signed_in? && current_user.email == "wayne@sfrent.net" %> 
+					<% if user_signed_in? && current_user.email == "wayne@sfrent.net" %>
 						<%= link_to "Start building Inspection", dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id =>17) %>
 					<% else %>
-						<%= link_to "Start Rental App", dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.env.development? ? 1 : 24) %>
+						<%= link_to "Start Rental App", dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.env.development? ? 1 : 25) %>
 					<% end %>
 				</li>
 				<li>
@@ -26,7 +26,7 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				
+
 					<% if user_signed_in? %>
 						<li>
 							<%= link_to(main_app.destroy_user_session_path, :id => 'logout',  :method=>'delete') do %>
@@ -36,13 +36,13 @@
 		            <% else %>
 		            	<li>
 							<%= link_to(main_app.new_user_session_path, :id => 'login') do %>
-			                 	Login <span class="glyphicon glyphicon-log-in"></span> 
+			                 	Login <span class="glyphicon glyphicon-log-in"></span>
 			                <% end %>
 		                </li>
 
 		                <li>
 			                <%= link_to(main_app.new_user_registration_path, :id => 'sign-up') do %>
-			                 	Sign Up <span class="glyphicon glyphicon-sign-up"></span> 
+			                 	Sign Up <span class="glyphicon glyphicon-sign-up"></span>
 			                <% end %>
 		                </li>
 
