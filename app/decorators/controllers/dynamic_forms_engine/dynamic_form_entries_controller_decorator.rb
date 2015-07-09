@@ -20,7 +20,7 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
 		    @contacts_hash = {}
 		    current_user.contacts.each do |contact|
 		      @contacts_hash[contact.first_name] = [contact.contact_type, contact.phone, contact.email, contact.company]
-		    end    
+		    end
 		    @contact_names = @contacts_hash.keys
 		end
   	end
@@ -34,7 +34,11 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
   	end
 
   	def tenant_applications
-  		@all_entries = DynamicFormsEngine::DynamicFormEntry.where(:dynamic_form_type => DynamicFormsEngine::DynamicFormType.last)
+  		if params[:last_app_submitted].present?
+  			@all_entries = DynamicFormsEngine::DynamicFormEntry.applications_to_be_synced(params[:last_app_submitted])
+  		else
+  			@all_entries = DynamicFormsEngine::DynamicFormEntry.last_form_type_entries #all form entries
+  		end
   		respond_to do |format|
   			format.json { render json: @all_entries, root: false }
   		end
