@@ -16,7 +16,7 @@ CarrierWave.configure do |config|
   # export S3_KEY=AKIAJCYZENE5L2JJ5R5A
   # export S3_SECRET=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
   config.fog_directory  = 'tenant-dev'                            # required
-  config.fog_public     = false                                   # optional, defaults to true
+  config.fog_public     = true                                   # optional, defaults to true
     # optional, defaults to {}
 end
 
