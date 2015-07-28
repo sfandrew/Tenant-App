@@ -2,11 +2,12 @@ guarantor_type = DynamicFormsEngine::DynamicFormType.new(
   {name: "Guarantor Application", description: "This application is being made by the undersigned for the express purpose as a Personal Guarantor. When your application is complete please submit it. Any questions please e-mail applications@sfrent.net", uuid: nil, user_id: 5, form_type: "Multi-step", is_public: false}
 )
 
+
 guarantor_type.fields.build([
   { field_order: 0, name: "Personal Info", field_type: "field_group", required: false, content_meta: "", included_in_report: false, field_width: "12"},
   { field_order: 1, name: "Tenant Applicant Info", field_type: "small_header", required: false, content_meta: "", included_in_report: false, field_width: "12"},
-  { field_order: 2, name: "First name", field_type: "text_field", required: true, content_meta: "", included_in_report: false, field_width: "6"},
-  { field_order: 3, name: "Last name", field_type: "text_field", required: true, content_meta: "", included_in_report: false, field_width: "6"},
+  { field_order: 2, name: "Tenant First name", field_type: "text_field", required: true, content_meta: "", included_in_report: false, field_width: "6"},
+  { field_order: 3, name: "Tenant Last name", field_type: "text_field", required: true, content_meta: "", included_in_report: false, field_width: "6"},
   { field_order: 19, name: "Housing History", field_type: "field_group", required: false, content_meta: "", included_in_report: false, field_width: "12"},
   { field_order: 20, name: "Current address", field_type: "text_field", required: false, content_meta: "", included_in_report: false, field_width: "12"},
   { field_order: 21, name: "Secondary address", field_type: "text_field", required: false, content_meta: "", included_in_report: false, field_width: "12"},
@@ -111,6 +112,5 @@ guarantor_type.fields.build([
   { field_order: 105, name: "File upload #2", field_type: "file_upload", required: false, content_meta: "", included_in_report: false, field_width: "12"},
   { field_order: 106, name: "Provide any additional information we should know or that may help us make a decision about your application", field_type: "text_area", required: false, content_meta: "", included_in_report: false, field_width: "12"}
 ])
-
 
 guarantor_type.save!
