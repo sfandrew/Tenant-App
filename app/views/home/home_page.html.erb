@@ -2,9 +2,13 @@
   <h1 class="text-center">Start Your Rental Application!</h1>
 
   <p class="text-center">
-  	<a class="btn btn-primary btn-lg" href="<%= dynamic_forms_engine.dynamic_form_entries_path %>" role="button">
+  	<a class="btn btn-primary btn-lg" href="<%= dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.env.development? ? 1 : 25) %>" role="button">
   		<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-  		<%= user_signed_in? ? 'Start' : 'Sign in' %>
+  		Rental Application
+  	</a>
+  	<a class="btn btn-warning btn-lg" href="<%= dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.env.development? ? 3 : 28) %>" role="button">
+  		<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+  		Guarantor Application
   	</a>
   </p>
 </div>

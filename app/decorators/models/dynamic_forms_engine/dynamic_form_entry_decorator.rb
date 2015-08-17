@@ -17,6 +17,23 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
   # before_validation :new_contacts
   #before_update :new_contacts
 
+  def self.redirect_to_user_draft_entry(user)
+    if user.dynamic_form_entries
+      in_progress_entry = user.dynamic_form_entries.order(updated_at: :desc).detect { |entry| entry.in_progress } || nil
+      if !in_progress_entry.nil?
+        in_progress_entry.id
+      else
+        false
+      end
+    else
+      false 
+    end
+  end
+
+  def self.path_to_current_entry(id)
+    
+  end
+
 
   def find_attachment(field_id)
     if attachments.present?

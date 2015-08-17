@@ -7,7 +7,7 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
 
 	skip_before_filter :authenticate_user!, only: [:tenant_applications]
 	before_filter :autocomplete_feature, only: [:new, :edit,:create, :update]
-	# before_filter :get_buildings, only: [:new, :edit, :create, :update, :show]
+	before_filter :get_buildings, only: [:new, :edit, :create, :update, :show]
 	before_filter :get_contacts, only: [:show]
 
 
@@ -26,13 +26,9 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
   	end
 
   	def get_buildings
-  		if Rails.env.production?
-  			uri = URI.parse('https://dev.sfrent.net/tenant_app_api.json')
-  		else
-  			uri = URI.parse('http://192.168.2.140:3000/tenant_app_api.json')
-  		end
-  		
+  		uri = URI.parse('https://sfrent.net/tenant_app_api.json')
   		http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true
   		request = Net::HTTP::Get.new(uri.request_uri)
   		request.basic_auth('tenant_app','sfrent')
   		@building_apartments = http.request(request).body
