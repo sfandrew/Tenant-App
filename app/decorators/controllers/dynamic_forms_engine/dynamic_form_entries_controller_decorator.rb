@@ -7,7 +7,7 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
 
 	skip_before_filter :authenticate_user!, only: [:tenant_applications]
 	before_filter :autocomplete_feature, only: [:new, :edit,:create, :update]
-	before_filter :get_buildings, only: [:new, :edit, :create, :update, :show]
+	before_filter :get_buildings, only: [:new, :edit, :create, :update, :show, :index]
 	before_filter :get_contacts, only: [:show]
 
 
@@ -23,7 +23,7 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
 		    end
 		    @contact_names = @contacts_hash.keys
 		end
-  	end
+  end
 
   	def get_buildings
   		uri = URI.parse('https://sfrent.net/tenant_app_api.json')

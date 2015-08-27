@@ -30,8 +30,25 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
     end
   end
 
-  def self.path_to_current_entry(id)
+  def get_building_name(buildings)
+    json_buildings = JSON.parse(buildings)
+    properties.each_pair do |index, value|
+      if value[:name] == 'Building'
+        building = json_buildings["buildings"].find { |building| value[:value].to_i == building["id"] }
+        return building["name"]
+      end
+    end
+
     
+  end
+
+  def get_building_size
+    properties.each_pair do |index,value|
+      if value[:name] == 'Apartment size'
+        return value[:value]
+      end
+    end
+
   end
 
 
