@@ -38,8 +38,6 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
         return building["name"]
       end
     end
-
-    
   end
 
   def get_building_size
