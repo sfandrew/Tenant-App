@@ -42,7 +42,7 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
 
   def get_building_size
     properties.each_pair do |index,value|
-      if value[:name] == 'Apartment size'
+      if value[:name] == 'Apartment Size'
         return value[:value]
       end
     end
