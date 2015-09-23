@@ -1,6 +1,6 @@
 GIT
   remote: https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git
-  revision: 25616c3ce60206a877faed1b620bd592d2ce18b3
+  revision: a330f6b7453daff1143aec392ea20f8e73f31fce
   specs:
     dynamic_forms_engine (0.0.4)
       bootstrap-datepicker-rails (>= 1.1.1.11)
@@ -362,3 +362,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   wicked_pdf
   wkhtmltopdf-binary
+
+BUNDLED WITH
+   1.10.6
