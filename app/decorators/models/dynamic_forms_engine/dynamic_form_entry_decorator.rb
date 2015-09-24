@@ -34,10 +34,11 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
     json_buildings = JSON.parse(buildings)
     properties.each_pair do |index, value|
       if value[:name] == 'Building'
-        building = json_buildings["buildings"].find { |building| value[:value].to_i == building["id"] }
-        return building["name"]
+        building = json_buildings["buildings"].find { |building| value[:value].to_i == building["id"].to_i }
+        return building["name"] unless building.nil?
       end
     end
+    'None at the moment'
   end
 
   def get_building_size
@@ -46,7 +47,7 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
         return value[:value]
       end
     end
-
+    'None at the moment'
   end
 
 

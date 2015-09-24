@@ -75,7 +75,8 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
 
-group :development do
+
+group :development, :test do
 	gem 'meta_request'
 	# gem 'pg'
 	gem 'mysql2'
@@ -84,6 +85,7 @@ group :development do
 	gem 'rails-footnotes', '~> 4.0'
 	gem "better_errors"
 	gem "binding_of_caller"
+	gem 'rspec-rails', '~> 3.0'
 
 end
 
