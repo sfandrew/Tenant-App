@@ -19,5 +19,8 @@ module TenantApplication
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    config.version_number = 'v0.5'
+    config.version_date = '9/30/2015'
   end
 end
