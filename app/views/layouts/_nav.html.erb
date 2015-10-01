@@ -15,12 +15,12 @@
 			<ul class="nav navbar-nav">
 				<% if user_signed_in? %>
 					<li>
-						<%= link_to(dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.env.development? ? 1 : 26), :class => 'form-link') do  %>
+						<%= link_to(dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.env.development? ? 1 : 29), :class => 'form-link') do  %>
 						Start NEW Rental Application <span class="glyphicon glyphicon-pencil"></span>
 						<% end %>
 					</li>
 					<li>
-						<%= link_to(dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.env.development? ? 3 : 29), :class => 'form-link') do  %>
+						<%= link_to(dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.env.development? ? 3 : 26), :class => 'form-link') do  %>
 						Start NEW Guarantor Application  <span class="glyphicon glyphicon-pencil"></span>
 						<% end %>
 					</li>
