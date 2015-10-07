@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   http_basic_authenticate_with name: 'tenant_app', password: 'sfrent'
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :is_admin?
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -72,6 +72,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name)
+      params.require(:user).permit(:name, :role)
     end
 end
