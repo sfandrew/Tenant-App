@@ -4,11 +4,11 @@
 <% @attachment_index ||= -1 %>
 
 <div class="col-md-<%= field.field_width %>">
-<%= f.label field.id, field.name.humanize, :class => "col-md-2 control-label" %>
+<%= f.label field.id, field.name.humanize, :class => "col-md-3 control-label" %>
 <%= f.hidden_field field.id, :value => field.id %>
 <%# raise %>
 
-  <div class="col-md-10">
+  <div class="col-md-7">
 
   <% if @dynamic_form_entry.attachments.size != 0 %>
 
@@ -18,10 +18,18 @@
         <%= attachment.hidden_field :content_meta, value: field.id %>
         <% if attachment.object %>
           <%= attachment.hidden_field :id, value: attachment.object.id %>
-          <%= attachment.label "Delete" if attachment.object.id %>
-          <%= attachment.check_box :remove_filename if attachment.object.id %>
-          <%= attachment_preview(attachment) %>
+          
+          <% if attachment.object.id %>
+            <%= attachment.label "Delete" %>
+            <%= attachment.check_box :remove_filename   %>
+            <% attachment.object %>
+          <% end %>
 
+          <% if attachment.object.id %>
+            <%= attachment_preview(attachment)  %>
+          <% else %>
+            <%= attachment.file_field :filename, :class => "form-control uploader" %>
+          <% end %>
         <% else %>
           <%= attachment.file_field :filename, :class => "form-control uploader" %>
         <% end %>

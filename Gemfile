@@ -86,7 +86,8 @@ group :development, :test do
 	gem "better_errors"
 	gem "binding_of_caller"
 	gem 'rspec-rails', '~> 3.0'
-
+	gem 'rails-perftest'
+	gem 'rack-mini-profiler'
 end
 
 group :production do
