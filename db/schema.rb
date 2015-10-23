@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007180820) do
+ActiveRecord::Schema.define(version: 20151023225147) do
 
   create_table "attachments", force: true do |t|
     t.integer  "user_id"
@@ -62,6 +62,9 @@ ActiveRecord::Schema.define(version: 20151007180820) do
     t.boolean  "in_progress"
     t.string   "last_section_saved"
     t.string   "application_pdf"
+    t.binary   "social_security"
+    t.binary   "social_security_key"
+    t.binary   "social_security_iv"
   end
 
   create_table "dynamic_forms_engine_dynamic_form_fields", force: true do |t|
