@@ -4,7 +4,7 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
   has_many :attachments, :as => :attachable, :dependent => :destroy
 
   scope :last_form_type_entries, -> { where(in_progress: false) } #all entries
-  scope :applications_to_be_synced, -> (last_app_synced) { where('in_progress = ? AND created_at >= ?', false, last_app_synced) }
+  scope :applications_to_be_synced, -> (last_app_synced) { where('in_progress = ? AND created_at >= ?', false, last_app_synced) } # applications that have been completed 
 
   accepts_nested_attributes_for :contacts,  :allow_destroy => :true
   accepts_nested_attributes_for :attachments, :allow_destroy => :true, reject_if: proc { |attributes| attributes["filename"].blank? }

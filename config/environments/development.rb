@@ -8,6 +8,11 @@ Rails.application.configure do
 
   config.reload_classes_only_on_change = false
 
+  # tenant application id
+  config.tenant_app_id = 1
+  # guarantor applicaiton id
+  config.guarantor_app_id = 3
+  
   # Do not eager load code on boot.
   config.eager_load = false
 

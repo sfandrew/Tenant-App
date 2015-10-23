@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'tenant_applications' => 'dynamic_forms_engine/dynamic_form_entries#tenant_applications', as: 'tenant_applications'
 
+  get 'field_values' => 'dynamic_forms_engine/dynamic_form_fields#field_with_values', as: 'field_values'
+
 
   devise_for :users, :controllers => {:sessions => 'sessions', registrations: 'registrations' }
 
