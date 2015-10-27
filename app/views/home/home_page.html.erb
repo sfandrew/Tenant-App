@@ -1,14 +1,53 @@
-<div class="jumbotron">
-  <h1 class="text-center">Start Your Rental Application!</h1>
+<div id='home-page'>
+  <div class="col-md-6">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h2 class="text-center">Tenant Application</h2>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li><h4>For new prospective Tenants</h4></li>
+          <li><h4>Select your Building and Apartment size preference</h4></li>
+          <li><h4>Submit personal information and rental/housing history</h4></li>
+          <li><h4>Save and come back later to submit your application</h4></li>
+        </ul>
 
-  <p class="text-center">
-  	<a class="btn btn-primary btn-lg" href="<%= dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.env.development? ? 1 : 25) %>" role="button">
-  		<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-  		Rental Application
-  	</a>
-  	<a class="btn btn-warning btn-lg" href="<%= dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.env.development? ? 3 : 28) %>" role="button">
-  		<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-  		Guarantor Application
-  	</a>
-  </p>
+        <br>
+        <br>
+
+        <div class="col-md-offset-3">
+          <a class="btn btn-success btn-lg" href="<%= dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.application.config.tenant_app_id) %>" role="button">
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Start Tenant Application 
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h2 class="text-center">Guarantor Application</h2>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li><h4>For Guarantors on prospective Tenants</h4></li>
+          <li><h4>Enter Tenant name and their Apartment preference</h4></li>
+          <li><h4>Submit peronsal information and rental/housing history</h4></li>
+          <li><h4>Save and come back later to submit your application</h4></li>
+        </ul>
+
+        <br>
+        <br>
+
+        <div class="col-md-offset-3">
+          <a class="btn btn-warning btn-lg" href="<%= dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.application.config.guarantor_app_id) %>" role="button">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Start Guarantor Application
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
