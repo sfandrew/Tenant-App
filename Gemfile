@@ -73,8 +73,8 @@ gem 'dynamic_forms_engine', git: "https://4be3166eb32f5bbd09980a6e111815d526767f
 gem 'wicked_pdf'
 ##wrapper for wkhtmltopdf
 gem 'wkhtmltopdf-binary'
-
-
+#encryption
+gem "strongbox"
 
 group :development, :test do
 	gem 'meta_request'
