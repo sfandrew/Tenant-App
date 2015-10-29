@@ -10,7 +10,8 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
   accepts_nested_attributes_for :attachments, :allow_destroy => :true, reject_if: proc { |attributes| attributes["filename"].blank? }
 
   encrypt_with_public_key :social_security,
-    :key_pair => ENV['KEY_PAIR']
+    :key_pair => ENV['KEY_PAIR'], 
+    :base64 => true
 
   before_validation :new_contacts_validation
 
