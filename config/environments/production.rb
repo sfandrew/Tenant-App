@@ -11,9 +11,9 @@ Rails.application.configure do
   config.eager_load = true
 
   # tenant application id
-  config.tenant_app_id = 31
+  config.tenant_app_id = 33
   # guarantor application id
-  config.guarantor_app_id = 32
+  config.guarantor_app_id = 34
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
