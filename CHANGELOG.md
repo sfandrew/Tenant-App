@@ -2,10 +2,18 @@
 
 ## [Unreleased](https://github.com/maxkaplan/tenant-application/tree/HEAD)
 
-[Full Changelog](https://github.com/maxkaplan/tenant-application/compare/v0.7...HEAD)
+[Full Changelog](https://github.com/maxkaplan/tenant-application/compare/v0.8...HEAD)
+
+**Implemented enhancements:**
+
+- Datepicker [\#5](https://github.com/maxkaplan/tenant-application/issues/5)
+
+## [v0.8](https://github.com/maxkaplan/tenant-application/tree/v0.8) (2015-10-30)
+[Full Changelog](https://github.com/maxkaplan/tenant-application/compare/v0.7...v0.8)
 
 **Closed issues:**
 
+- Encrypt Driver License & Social Security fields [\#4](https://github.com/maxkaplan/tenant-application/issues/4)
 - Tenant & Guarantor fields view [\#3](https://github.com/maxkaplan/tenant-application/issues/3)
 
 ## [v0.7](https://github.com/maxkaplan/tenant-application/tree/v0.7) (2015-10-08)
