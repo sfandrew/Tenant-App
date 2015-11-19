@@ -29,3 +29,4 @@
 server.csr
 server.key
 server.pass.key
+a_tenant_today.crt

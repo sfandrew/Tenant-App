@@ -74,7 +74,13 @@ gem 'wkhtmltopdf-binary'
 #encryption
 gem "strongbox"
 
+group :test do
+	gem 'sqlite3'
+end
+
 group :development, :test do
+	gem 'factory_girl_rails'
+	gem 'faker'
 	gem 'meta_request'
 	# gem 'pg'
 	gem 'mysql2'
