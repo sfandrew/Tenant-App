@@ -7,7 +7,6 @@ describe DynamicFormsEngine::DynamicFormType do
       # field.should_not be_valid
       # expect(field).to eq false
       expect(field.valid?).to eq false
-      field.should_not be_valid
     end
     # it "it is valid with fields" do
     #   field = DynamicFormType.new(:name => 'Move out form', :description => 'A form list of stuff to move out')
