@@ -79,6 +79,7 @@ group :test do
 end
 
 group :development, :test do
+	gem 'brakeman', :require => false
 	gem 'factory_girl_rails'
 	gem 'faker'
 	gem 'meta_request'
