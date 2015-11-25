@@ -1,6 +1,6 @@
 GIT
   remote: https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git
-  revision: f53bd92a89be5587fd350fb59809804d0557c8e3
+  revision: 5697eca5077045664bfbb7f4b4cb83e3fdaae272
   specs:
     dynamic_forms_engine (0.5)
       bootstrap-datepicker-rails (>= 1.1.1.11)
@@ -91,7 +91,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.1.1)
+    coffee-script-source (1.10.0)
     commonjs (0.2.7)
     connection_pool (2.2.0)
     debug_inspector (0.0.2)
@@ -247,9 +247,9 @@ GEM
       rack-contrib (~> 1.1)
       railties (>= 3.0.0, < 5.0.0)
     method_source (0.8.2)
-    mime-types (2.6.2)
+    mime-types (2.99)
     mini_portile (0.6.2)
-    minitest (5.8.2)
+    minitest (5.8.3)
     multi_json (1.11.2)
     mysql2 (0.3.18)
     net-scp (1.2.1)
