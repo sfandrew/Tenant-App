@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //=# require turbolinks
 //= require bootstrap
-//= require bootstrap-datepicker/core
 // = require dynamic_forms_engine/dynamic_form_types
 // = require dynamic_forms_engine/dynamic_forms
 // = require dynamic_forms_engine/flashcanvas

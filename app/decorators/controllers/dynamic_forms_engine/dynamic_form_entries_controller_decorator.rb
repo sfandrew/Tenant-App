@@ -1,5 +1,4 @@
 DynamicFormsEngine::DynamicFormEntriesController.class_eval do
-
   http_basic_authenticate_with name: 'tenant_app', password: 'sfrent', only: :tenant_applications
 
   require "net/http"
@@ -9,7 +8,6 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
   # before_filter :autocomplete_feature, only: [:new, :edit,:create, :update]
   before_filter :get_buildings, only: [:new, :edit, :create, :update, :show, :index]
   # before_filter :get_contacts, only: [:show]
-
 
   def get_contacts
     @contacts = Contact.where(id: Contactable.select(:contact_id).where(:contactable_type => "DynamicFormsEngine::DynamicFormEntry",:contactable_id => params[:id]))

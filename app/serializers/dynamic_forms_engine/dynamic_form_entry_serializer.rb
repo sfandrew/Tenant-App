@@ -2,8 +2,8 @@ class DynamicFormsEngine::DynamicFormEntrySerializer < ActiveModel::Serializer
  
 	def attributes
 	  	entry = {}
-	  	entry.merge!(application_name: object.dynamic_form_type.name, id: object.id, in_progress: object.in_progress, 
-	  				created: object.created_at, updated: object.updated_at, uuid: object.uuid, user_email: object.user.email)
+	  	entry.merge!(application_name: object.dynamic_form_type.name, id: object.id, in_progress: object.in_progress, created: object.created_at, updated: object.updated_at, 
+	  				uuid: object.uuid, user_email: object.user.email, ss: object.decrypt_ss)
 
 	  	field_group_name = ''
 	  	object.properties.each_value do |value|

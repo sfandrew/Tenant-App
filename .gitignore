@@ -21,3 +21,15 @@
 # Ignore file uploads
 /public/uploads/tmp
 /public/tmp/uploads
+
+# Ignore key pair
+/config/keypair.pem
+/config/private.pem
+
+server.csr
+server.key
+server.pass.key
+a_tenant_today.crt
+
+#Ignore brakeman
+brakeman.html

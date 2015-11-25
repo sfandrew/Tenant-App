@@ -5,12 +5,12 @@ class Attachment < ActiveRecord::Base
 
 	mount_uploader :filename, AttachmentUploader
 	validates :filename, allow_blank: true, format:{
-		with: %r{\.(gif|jpg|png|pdf)\Z}i,
-		message: 'must be a URL for GIF, JPG, PDF or PNG image.'
+		with: %r{\.(gif|jpg|jpeg|png|pdf|xlsx|docx)\Z}i,
+		message: 'must be a URL for GIF, JPG, PDF, DOCX or PNG image.'
 	}
-	# validates :content_meta, presence: :true
 
 	def filename_url_or_cached_url
 		filename_url || filename_cache
 	end
+
 end
