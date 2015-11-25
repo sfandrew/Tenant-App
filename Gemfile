@@ -37,8 +37,6 @@ gem 'seed_dump'
 #api for entries
 gem 'active_model_serializers'
 
-gem 'bootstrap-datepicker-rails'
-
 gem 'pry'
 gem 'rmagick', '2.13.2'
 gem 'carrierwave'
@@ -69,8 +67,21 @@ gem 'exception_notification'
 #PROD - Dynamic Form Gem via GIT (James)
 gem 'dynamic_forms_engine', git: "https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git"
 
+##pdf generation 
+gem 'wicked_pdf'
+##wrapper for wkhtmltopdf
+gem 'wkhtmltopdf-binary'
+#encryption
+gem "strongbox"
 
-group :development do
+group :test do
+	gem 'sqlite3'
+end
+
+group :development, :test do
+	gem 'brakeman', :require => false
+	gem 'factory_girl_rails'
+	gem 'faker'
 	gem 'meta_request'
 	# gem 'pg'
 	gem 'mysql2'
@@ -79,7 +90,9 @@ group :development do
 	gem 'rails-footnotes', '~> 4.0'
 	gem "better_errors"
 	gem "binding_of_caller"
-
+	gem 'rspec-rails', '~> 3.0'
+	gem 'rails-perftest'
+	gem 'rack-mini-profiler'
 end
 
 group :production do

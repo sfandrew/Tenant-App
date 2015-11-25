@@ -4,10 +4,14 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
   has_many :attachments, :as => :attachable, :dependent => :destroy
 
   scope :last_form_type_entries, -> { where(in_progress: false) } #all entries
-  scope :applications_to_be_synced, -> (last_app_synced) { where('in_progress = ? AND created_at >= ?', false, last_app_synced) }
+  scope :applications_to_be_synced, -> (last_app_synced) { where('in_progress = ? AND created_at >= ?', false, last_app_synced) } # applications that have been completed 
 
   accepts_nested_attributes_for :contacts,  :allow_destroy => :true
   accepts_nested_attributes_for :attachments, :allow_destroy => :true, reject_if: proc { |attributes| attributes["filename"].blank? }
+
+  encrypt_with_public_key :social_security,
+    :key_pair => ENV['KEY_PAIR'], 
+    :base64 => true
 
   before_validation :new_contacts_validation
 
@@ -30,8 +34,24 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
     end
   end
 
-  def self.path_to_current_entry(id)
-    
+  def get_building_name(buildings)
+    json_buildings = JSON.parse(buildings)
+    properties.each_pair do |index, value|
+      if value[:name] == 'Building'
+        building = json_buildings["buildings"].find { |building| value[:value].to_i == building["id"].to_i }
+        return building["name"] unless building.nil?
+      end
+    end
+    'None at the moment'
+  end
+
+  def get_building_size
+    properties.each_pair do |index,value|
+      if value[:name] == 'Apartment Size'
+        return value[:value]
+      end
+    end
+    'None at the moment'
   end
 
 
@@ -80,20 +100,20 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
     end
 
   def email_user
-  	if !self.contacts.empty?
-  		FormEntry.form_entry_notification(self, :contact => self.contacts).deliver
-  	else
-  		FormEntry.form_entry_notification(self).deliver
-  	end
+    if !self.contacts.empty?
+      FormEntry.form_entry_notification(self, :contact => self.contacts).deliver
+    else
+      FormEntry.form_entry_notification(self).deliver
+    end
 
   end
   def email_contacts
-  	if !self.contacts.empty?
-  		self.contacts.each do |contact|
-  			FormEntry.form_entry_contacts(self,contact).deliver
-  		end
-  		new_contacts
-  	end
+    if !self.contacts.empty?
+      self.contacts.each do |contact|
+        FormEntry.form_entry_contacts(self,contact).deliver
+      end
+      new_contacts
+    end
   end
 
   def building_name(building_id,buildings_object)
