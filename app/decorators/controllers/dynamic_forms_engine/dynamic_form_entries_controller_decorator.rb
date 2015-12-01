@@ -24,7 +24,7 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
   end
 
     def get_buildings
-      uri = URI.parse('https://dev.sfrent.net/tenant_app_api.json')
+      uri = URI.parse('https://sfrent.net/tenant_app_api.json')
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
       request = Net::HTTP::Get.new(uri.request_uri)
