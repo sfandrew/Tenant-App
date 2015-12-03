@@ -7,9 +7,16 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :dynamic_form_entries, class_name: "DynamicFormsEngine::DynamicFormEntry"
+  has_many :dynamic_form_types, class_name: "DynamicFormsEngine::DynamicFormType"
+
+
   has_many :contacts
 
   before_create :set_role
+
+  def admin?
+    role == 'admin'
+  end
 
 
 	def contact_ids

@@ -5,6 +5,7 @@
       <th>Role</th>
       <th>Last sign-in</th>
       <th>Created at</th>
+      <th>Applications</th>
     </tr>
   </thead>
 
@@ -15,8 +16,13 @@
         <td><%= user.role %></td>
         <td><%= user.last_sign_in_at.strftime(" %l:%M %p %b. %d, %Y") %></td>
         <td><%= user.created_at.strftime(" %l:%M %p %b. %d, %Y") %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to(dynamic_forms_engine.dynamic_form_entries_path(:user => user.id), :class => 'btn btn-sm btn-primary')  do %>
+            Entries<span class="badge"><%= user.dynamic_form_entries.size %></span>
+          <% end %>  
+        </td>
+        <td><%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', user, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
