@@ -8,6 +8,11 @@
 
 - Datepicker [\#5](https://github.com/maxkaplan/tenant-application/issues/5)
 
+**Closed issues:**
+
+- User Feedback [\#7](https://github.com/maxkaplan/tenant-application/issues/7)
+- Admin interface [\#6](https://github.com/maxkaplan/tenant-application/issues/6)
+
 ## [v0.8](https://github.com/maxkaplan/tenant-application/tree/v0.8) (2015-10-30)
 [Full Changelog](https://github.com/maxkaplan/tenant-application/compare/v0.7...v0.8)
 
