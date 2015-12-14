@@ -1,6 +1,6 @@
 GIT
   remote: https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git
-  revision: 8c2e5e21b2f6a7d6e3c66e378ac294a9ac80f21e
+  revision: 847dbdf70885c64d479b17bf630671566dc28c0a
   specs:
     dynamic_forms_engine (0.5)
       bootstrap-datepicker-rails (>= 1.1.1.11)
@@ -384,6 +384,9 @@ GEM
     warden (1.2.3)
       rack (>= 1.0)
     wicked_pdf (1.0.1)
+    will_paginate (3.0.7)
+    will_paginate-bootstrap (1.0.1)
+      will_paginate (>= 3.0.3)
     wkhtmltopdf-binary (0.9.9.3)
 
 PLATFORMS
@@ -426,6 +429,7 @@ DEPENDENCIES
   strongbox
   uglifier (>= 1.3.0)
   wicked_pdf
+  will_paginate-bootstrap
   wkhtmltopdf-binary
 
 BUNDLED WITH

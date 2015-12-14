@@ -20,7 +20,7 @@ module TenantApplication
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.version_number = 'v0.7'
-    config.version_date = '10/20/2015'
+    config.version_number = 'v0.8'
+    config.version_date = '12/14/2015'
   end
 end

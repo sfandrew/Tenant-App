@@ -1,0 +1,22 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Report</th>
+      <th>Submitted</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feedbacks.each do |feedback| %>
+      <tr>
+        <td><%= feedback.user.email %></td>
+        <td><%= link_to truncate(feedback.report), feedback %></td>
+        <td><%= feedback.created_at.strftime(" %l:%M %p %b. %d, %Y") %></td>
+        <td><%= link_to 'Show', feedback, :class => 'btn btn-info' %></td>
+        <td><%= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

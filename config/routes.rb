@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :feedbacks
   resources :attachments
 
   resources :contactables

@@ -1,0 +1,9 @@
+<h1>Listing feedbacks</h1>
+
+<% unless @feedbacks.blank? %>
+  <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+  <%= render partial: 'list_feedbacks', locals: { feedback: @feedbacks} %>
+  <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+<% end %>
+
+

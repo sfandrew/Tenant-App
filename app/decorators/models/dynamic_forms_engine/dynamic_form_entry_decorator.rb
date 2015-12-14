@@ -39,7 +39,10 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
     properties.each_pair do |index, value|
       if value[:name] == 'Building'
         building = json_buildings["buildings"].find { |building| value[:value].to_i == building["id"].to_i }
-        return building["name"] unless building.nil?
+        if building
+          building_address = building["address1"] + ' ' + building["city"] + ', ' + building["state"] + ' ' + building["zip"]
+          return building_address
+        end
       end
     end
     'None at the moment'
@@ -107,6 +110,7 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
     end
 
   end
+  
   def email_contacts
     if !self.contacts.empty?
       self.contacts.each do |contact|
@@ -115,13 +119,6 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
       new_contacts
     end
   end
-
-  def building_name(building_id,buildings_object)
-    json_buildings = JSON.parse(buildings_object)
-    building = json_buildings["buildings"].find { |building|  building_id.to_i == building["id"] } 
-    building["name"] 
-  end
-
 
 
 end
