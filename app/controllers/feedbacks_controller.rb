@@ -34,6 +34,7 @@ class FeedbacksController < ApplicationController
 
   def destroy
     @feedback.destroy
+    redirect_to feedbacks_url, notice: 'Feedback was successfully destroyed.'
   end
 
   private
