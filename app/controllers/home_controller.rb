@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
-  def home_page
-  end
+	skip_before_filter :authenticate_user!
+
+	def home_page
+	end
 end
