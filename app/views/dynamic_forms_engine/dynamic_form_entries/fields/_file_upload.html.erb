@@ -57,9 +57,16 @@
 
       <% end %>
     <% end %>
+
     <% if field.required? %>
-		<span class="col-xs-1 required required-field">*</span>
+		  <span class="col-xs-1 required required-field">*</span>
   	<% end %>
+
+    <% if defined?(errors) and errors.present? %>
+      <small  class= "error-msg" style="color:red"><%= errors.join(', ') %></small>
+    <% end %>
 
   </div>
 </div>
+
+

@@ -40,8 +40,8 @@ a.navbar-brand {
 
 
 #feedback-widget{
-	height: 45px;
-	bottom: 100px;
+	/*height: 65px;*/
+	bottom: 300px;
 	left: -33px;
 	position: fixed;
 	transform:rotate(270deg);

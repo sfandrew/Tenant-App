@@ -1,6 +1,6 @@
 GIT
   remote: https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git
-  revision: 30e157ff5801d2e6ac448133cb12564af1b9f31d
+  revision: 93813d44a235a24c950461bd97e4ddf00bb1233b
   specs:
     dynamic_forms_engine (0.5)
       bootstrap-datepicker-rails (>= 1.1.1.11)
@@ -44,7 +44,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    autoprefixer-rails (6.2.1)
+    autoprefixer-rails (6.2.3)
       execjs
       json
     bcrypt (3.1.10)

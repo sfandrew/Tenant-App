@@ -8,7 +8,11 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<%= dynamic_forms_engine.dynamic_form_entries_path %>">Tenant Today!</a>
+			<% if user_signed_in? %>
+				<%= link_to 'Tenant Today!', dynamic_forms_engine.dynamic_form_entries_path, :class => 'navbar-brand' %>
+			<% else %>
+				<%= link_to 'Tenant Today!', root_path, :class => 'navbar-brand' %>
+			<% end %>
 		</div>
 
 		<div class="navbar-collapse collapse" id ="navbar-collapse">
