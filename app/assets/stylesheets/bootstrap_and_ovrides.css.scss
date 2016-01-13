@@ -47,9 +47,11 @@ ul.nav a:visited{
 	border-color: #1c73a5;
 }
 
-.navbar-nav li > .form-link{
-    padding-left: 40px;
-    padding-right: 40px;
+@media(min-width: 1200px){
+	.navbar-nav li > .form-link{
+    	padding-left: 40px!important;
+    	padding-right: 40px!important;
+	}
 }
 
 .navbar-toggle .icon-bar{

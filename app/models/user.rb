@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates :role, inclusion: %w(user admin), on: :update, :if => :role_changed?
   
   devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :timeoutable
          
   has_many :dynamic_form_entries, class_name: "DynamicFormsEngine::DynamicFormEntry"
   has_many :dynamic_form_types, class_name: "DynamicFormsEngine::DynamicFormType"
