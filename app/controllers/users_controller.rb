@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   helper_method :sort_column, :sort_direction
 
-  before_action :authenticate_user!, :is_admin?
+  before_action :authenticate_user!
+  before_action :is_admin?, except: [:show, :edit, :update]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users

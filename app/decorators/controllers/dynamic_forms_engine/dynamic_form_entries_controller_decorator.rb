@@ -1,5 +1,5 @@
 DynamicFormsEngine::DynamicFormEntriesController.class_eval do
-  http_basic_authenticate_with name: 'tenant_app', password: 'sfrent', only: :tenant_applications
+  http_basic_authenticate_with name: 'tenant_app', password: ENV['TENANT_APP_PW'], only: :tenant_applications
 
   require "net/http"
   require "uri"

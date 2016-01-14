@@ -41,6 +41,11 @@
 			<ul class="nav navbar-nav navbar-right">
 
 					<% if user_signed_in?  %>
+						<li>
+								<%= link_to main_app.edit_user_registration_path(current_user) do %>
+			                 		  <span class="glyphicon glyphicon-user"></span>
+			                	<% end %>
+		                	</li>
 						<% if current_user.admin? %>
 							<li class="dropdown admin">
 	          					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
@@ -55,6 +60,7 @@
 					          	</ul>
 	        				</li>		
 						<% else %>
+							
 							<li>
 								<%= link_to(main_app.destroy_user_session_path, :id => 'logout',  :method=>'delete') do %>
 			                 		Logout  <span class="glyphicon glyphicon-log-out"></span>
