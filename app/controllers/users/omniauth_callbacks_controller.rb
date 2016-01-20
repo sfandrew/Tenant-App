@@ -10,7 +10,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 	      set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
 	    else
 	      session["devise.facebook_data"] = request.env["omniauth.auth"]
-	      redirect_to new_user_registration_url
+	      redirect_to new_user_registration_url, "If you have already sign-up up using your Facebook email, please login using your Facebook email"
 	    end
 	end
 
@@ -26,7 +26,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 			sign_in_and_redirect @user, :event => :authentication
 		else
 			session["devise.google_data"] = request.env["omniauth.auth"].except("extra")
-			redirect_to new_user_registration_url
+			redirect_to new_user_registration_url, alert: "If you have already sign-up up using your Google email, please login using your Google email"
 		end
   	end
 
