@@ -39,6 +39,18 @@
 					<div class="spacer"></div>
 
 					<div class="form-group">
+                        <a class="btn btn-block btn-social btn-facebook" href="<%= user_omniauth_authorize_path(:facebook) %>">
+                        	<i class="fa fa-facebook"></i> Sign in with Facebook
+                        </a>
+                    </div>
+
+                    <div class="form-group">
+                        <a class="btn btn-block btn-social btn-google-plus" href="<%= user_omniauth_authorize_path(:google_oauth2) %>">
+                            <i class="fa fa-google-plus"></i> Sign in with Google
+                        </a>
+                    </div>
+
+					<div class="form-group">
                     	<div class="col-md-12 control">
                         	<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">Didn't receive confirmation email?
                             	<%= link_to "Click here", new_confirmation_path(resource_name), :class => 'primary' %>

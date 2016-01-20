@@ -42,10 +42,12 @@
 
 					<% if user_signed_in?  %>
 						<li>
+							<% unless current_user.omniauth_user? %>
 								<%= link_to main_app.edit_user_registration_path(current_user) do %>
 			                 		  <span class="glyphicon glyphicon-user"></span>
 			                	<% end %>
-		                	</li>
+			                <% end %>
+		                </li>
 						<% if current_user.admin? %>
 							<li class="dropdown admin">
 	          					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
@@ -73,7 +75,6 @@
 			                 	Login <span class="glyphicon glyphicon-log-in"></span>
 			                <% end %>
 		                </li>
-
 		                <li>
 			                <%= link_to(main_app.new_user_registration_path, :id => 'sign-up') do %>
 			                 	Sign Up <span class="glyphicon glyphicon-sign-up"></span>

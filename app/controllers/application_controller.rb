@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
   before_filter :feedback_modal, :authenticate_user!
 
   def is_admin?
-  	redirect_to root_path, alert: 'Only Admin can view the requested page' unless current_user.role == 'admin'
+  	redirect_to root_path, alert: 'Only Admin can view the requested page' unless current_user.admin?
+  end
+
+  def is_omniauth_user?
+    redirect_to root_path, alert: 'Cannot Edit Oauth Users' if current_user.omniauth_user?
   end
 
   def feedback_modal
@@ -14,7 +18,4 @@ class ApplicationController < ActionController::Base
   end
 
 
-
-
-  
 end

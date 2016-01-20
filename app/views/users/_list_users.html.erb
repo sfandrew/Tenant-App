@@ -3,6 +3,8 @@
     <tr>
       <th><%= sortable "email" %></th>
       <th><%= sortable "role" %></th>
+      <th>OmniAuth Provider</th>
+      <th>Name</th>
       <th><%= sortable "last_sign_in_at"  %></th>
       <th><%= sortable "created_at" %></th>
       <th>Applications</th>
@@ -14,6 +16,8 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.role %></td>
+        <td><%= user.provider.blank? ? 'None' : user.provider %></td>
+        <td><%= user.name.blank? ? 'None' : user.name %></td>
         <td><%= user.last_sign_in_at.strftime(" %l:%M %p %b. %d, %Y") %></td>
         <td><%= user.created_at.strftime(" %l:%M %p %b. %d, %Y") %></td>
         <td>

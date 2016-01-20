@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'field_values' => 'dynamic_forms_engine/dynamic_form_fields#field_with_values', as: 'field_values'
 
 
-  devise_for :users, :controllers => {:sessions => 'sessions', registrations: 'registrations' }
+  devise_for :users, :controllers => {:sessions => 'sessions', registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks"  }
 
 
 
