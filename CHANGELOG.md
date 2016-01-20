@@ -10,6 +10,7 @@
 
 **Closed issues:**
 
+- Login thru fb,gmail via Oauth [\#8](https://github.com/maxkaplan/tenant-application/issues/8)
 - User Feedback [\#7](https://github.com/maxkaplan/tenant-application/issues/7)
 - Admin interface [\#6](https://github.com/maxkaplan/tenant-application/issues/6)
 
