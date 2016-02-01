@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/maxkaplan/tenant-application/tree/HEAD)
 
-[Full Changelog](https://github.com/maxkaplan/tenant-application/compare/v0.8...HEAD)
+[Full Changelog](https://github.com/maxkaplan/tenant-application/compare/v0.9...HEAD)
+
+**Closed issues:**
+
+- Application fee payment [\#9](https://github.com/maxkaplan/tenant-application/issues/9)
+
+## [v0.9](https://github.com/maxkaplan/tenant-application/tree/v0.9) (2016-01-20)
+[Full Changelog](https://github.com/maxkaplan/tenant-application/compare/v0.8...v0.9)
 
 **Implemented enhancements:**
 
