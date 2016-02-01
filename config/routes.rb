@@ -7,11 +7,19 @@ Rails.application.routes.draw do
 
   resources :contacts
 
+  get 'transactions' => 'transactions#index', as: 'transactions'
+
   get '/apis/:action', :controller => 'apis'
 
 
 
   mount DynamicFormsEngine::Engine => "/dynamic_forms_engine"
+
+  get 'dynamic_forms_engine/dynamic_form_entries/:id/transactions/new' => 'transactions#new', as: 'new_transaction'
+
+  post 'dynamic_forms_engine/dynamic_form_entries/:id/transactions/create' => 'transactions#create'
+
+  # get 'transactions/index' => 'transactions#index'
 
   get 'tenant_applications' => 'dynamic_forms_engine/dynamic_form_entries#tenant_applications', as: 'tenant_applications'
 

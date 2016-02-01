@@ -1,7 +1,8 @@
 DynamicFormsEngine::DynamicFormEntry.class_eval do
   has_many  :contacts, through: :contactables, :dependent => :destroy
   has_many  :contactables, :as => :contactable, :dependent => :destroy
-  has_many :attachments, :as => :attachable, :dependent => :destroy
+  has_many  :attachments, :as => :attachable, :dependent => :destroy
+  has_one   :payment, :class_name => 'Transaction'
 
   scope :last_form_type_entries, -> { where(in_progress: false) } #all entries
   scope :applications_to_be_synced, -> (last_app_synced) { where('in_progress = ? AND created_at >= ?', false, last_app_synced) } # applications that have been completed 
@@ -20,6 +21,10 @@ DynamicFormsEngine::DynamicFormEntry.class_eval do
   # before_save :email_contacts
   # before_validation :new_contacts
   #before_update :new_contacts
+
+  def unpaid_app?
+    !in_progress && payment.nil?
+  end
 
   def self.redirect_to_user_draft_entry(user)
     if user.dynamic_form_entries

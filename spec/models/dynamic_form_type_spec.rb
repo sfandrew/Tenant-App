@@ -3,10 +3,10 @@ require 'spec_helper'
 describe DynamicFormsEngine::DynamicFormType do
   describe "when a new form is created" do
     it "is not valid without fields" do
-      field = DynamicFormsEngine::DynamicFormType.new(:name => 'Move out form', :description => 'A form list of stuff to move out')
+      form_type = DynamicFormsEngine::DynamicFormType.new(:name => 'Move out form', :description => 'A form list of stuff to move out')
       # field.should_not be_valid
       # expect(field).to eq false
-      expect(field.valid?).to eq false
+      expect(form_type.valid?).to eq false
     end
     # it "it is valid with fields" do
     #   field = DynamicFormType.new(:name => 'Move out form', :description => 'A form list of stuff to move out')

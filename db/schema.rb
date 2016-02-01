@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160115183053) do
+ActiveRecord::Schema.define(version: 20160126195606) do
 
   create_table "attachments", force: true do |t|
     t.integer  "user_id"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20160115183053) do
     t.binary   "social_security"
     t.binary   "social_security_key"
     t.binary   "social_security_iv"
+    t.boolean  "app_fee_paid"
   end
 
   create_table "dynamic_forms_engine_dynamic_form_fields", force: true do |t|
@@ -94,6 +95,15 @@ ActiveRecord::Schema.define(version: 20160115183053) do
   create_table "feedbacks", force: true do |t|
     t.integer  "user_id"
     t.text     "report"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transactions", force: true do |t|
+    t.integer  "dynamic_form_entry_id"
+    t.string   "braintree_id"
+    t.string   "payment_type"
+    t.decimal  "amount",                precision: 10, scale: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

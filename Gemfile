@@ -52,6 +52,8 @@ gem 'exception_notification'
 gem 'omniauth-facebook'
 #gmail login
 gem "omniauth-google-oauth2"
+#app payment
+gem 'braintree'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

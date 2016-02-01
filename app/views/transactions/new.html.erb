@@ -1,0 +1,18 @@
+<h1>Application Fee Payment <small>Your application will not be completed until you pay the application fee $30/application</small></h1>
+<p>All Major Credit Cards and Pay-Pal accounts accepted!</p>
+
+<%= form_tag(:action => 'create') do %>
+	<div id="payment-form"></div>
+	<%= submit_tag 'Submit $30 Payment', :class => 'btn btn-lg btn-block btn-success' %>
+<% end %>
+
+<!-- <form id="checkout" method="post" action="/checkout">
+  <div id="payment-form"></div>
+  <input type="submit" value="Pay $10">
+</form> -->
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
+<%= render 'transactions.js.erb' %>
+</script>
+
+

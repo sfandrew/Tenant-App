@@ -1,0 +1,27 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Form Application</th>
+      <th>User E-mail</th>
+      <th>Braintree ID</th>
+      <th>Payment Type</th>
+      <th>Submitted at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% transaction.each do |t| %>
+      <tr>
+        <td><%= link_to t.dynamic_form_entry.form_type_name, dynamic_forms_engine.dynamic_form_entry_path(t.dynamic_form_entry), 
+                                                    :class => t.dynamic_form_entry.is_tenant_app? ? 'btn btn-success' : 'btn btn-warning' %>
+        </td>
+        <td><%= t.dynamic_form_entry.user.email %></td>
+        <td><%= t.braintree_id %></td>
+        <td><%= t.payment_type %></td>
+        <td><%= t.created_at.strftime(" %l:%M %p %b. %d, %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

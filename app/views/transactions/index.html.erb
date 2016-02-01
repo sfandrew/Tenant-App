@@ -1,0 +1,7 @@
+<h1>Listing Transactions</h1>
+
+<% unless @transactions.blank? %>
+	<%= will_paginate @transactions, renderer: BootstrapPagination::Rails %>
+	<%= render partial: 'list_transactions', locals: { transaction: @transactions} %>
+	<%= will_paginate @transactions, renderer: BootstrapPagination::Rails %>
+<% end %>

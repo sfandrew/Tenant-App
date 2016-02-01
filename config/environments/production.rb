@@ -105,4 +105,10 @@ Rails.application.configure do
     :sender_address => %w{andrew@sfrent.net},
     :exception_recipients => %w{andrew@sfrent.net}
   }
+
+  Braintree::Configuration.environment = :production
+  Braintree::Configuration.merchant_id = ENV['BRAINTREE_MERCHANT_ID']
+  Braintree::Configuration.public_key = ENV['BRAINTREE_PUBLIC_KEY']
+  Braintree::Configuration.private_key = ENV['BRAINTREE_PRIVATE_KEY']
+  
 end

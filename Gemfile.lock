@@ -1,6 +1,6 @@
 GIT
   remote: https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git
-  revision: 9ba96f6546772d2a380a8d0e6481bfa7d14a9599
+  revision: 1c8ef3ce5c7ed1bfc0e614495f6d2a7a5b913adf
   specs:
     dynamic_forms_engine (0.5)
       bootstrap-datepicker-rails (>= 1.1.1.11)
@@ -60,6 +60,8 @@ GEM
     bootstrap-sass (3.3.5)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    braintree (2.57.0)
+      builder (>= 2.0.0)
     brakeman (3.1.2)
       erubis (~> 2.6)
       fastercsv (~> 1.5)
@@ -423,6 +425,7 @@ DEPENDENCIES
   active_model_serializers
   better_errors
   binding_of_caller
+  braintree
   brakeman
   carrierwave
   carrierwave_direct
