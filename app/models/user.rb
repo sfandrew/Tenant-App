@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  validates :role, inclusion: %w(user admin), on: :update, :if => :role_changed?
+  validates :role, inclusion: %w(user admin super-user), on: :update, :if => :role_changed?
   
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
@@ -36,8 +36,24 @@ class User < ActiveRecord::Base
     role == 'admin'
   end
 
+  def superuser?
+    role == 'super-user'
+  end
+
+  def authorized_users?
+    admin? || superuser?
+  end
+
   def omniauth_user?
     !provider.blank?
+  end
+
+  def validate_user_role
+    raise
+    if current_user.admin? && superuser?
+      errors.add(:base, 'Admin users cannot edit Super Users')
+      return false
+    end
   end
 
 
@@ -50,4 +66,6 @@ class User < ActiveRecord::Base
     def set_role
       self.role = 'user'
     end
+
+    
 end

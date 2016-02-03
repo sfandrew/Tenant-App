@@ -1,7 +1,7 @@
 class TransactionsController < ApplicationController
 	before_filter :generate_client_token, only: [:new]
 	before_filter :get_entry, only: [:new, :create]
-	before_action :is_admin?, only: [:index]
+	before_action :authorized_personel, only: [:index]
 
 	def index
 		@transactions = Transaction.order(created_at: :desc).paginate(:page => params[:page], :per_page => 30)

@@ -25,8 +25,8 @@
             Entries<span class="badge"><%= user.dynamic_form_entries.size %></span>
           <% end %>  
         </td>
-        <td><%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-warning' %></td>
-        <td><%= link_to 'Destroy', user, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-warning' unless user.superuser? %></td>
+        <td><%= link_to 'Destroy', user, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } if current_user.superuser? %></td>
       </tr>
     <% end %>
   </tbody>

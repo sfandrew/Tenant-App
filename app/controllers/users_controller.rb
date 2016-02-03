@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   helper_method :sort_column, :sort_direction
 
-  before_action :authenticate_user!
-  before_action :is_admin?, except: [:show, :edit, :update]
+  before_action :authenticate_user!, :authorized_personel
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authorized_superusers, only: [:edit, :update]
 
   # GET /users
   # GET /users.json
@@ -83,4 +83,16 @@ class UsersController < ApplicationController
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
+
+    def authorized_superusers
+      if current_user.admin?
+        if params[:user]
+          if user_params.has_value?('super-user')
+            redirect_to users_path, alert: 'Only Super Users are allowed that action'
+          end
+        end
+        redirect_to users_path, alert: 'Only Super Users can edit other Super Users' if @user.superuser?
+      end
+    end
+
 end

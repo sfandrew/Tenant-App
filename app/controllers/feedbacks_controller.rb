@@ -1,5 +1,5 @@
 class FeedbacksController < ApplicationController
-  before_filter :is_admin?, only: [:index, :new, :show, :update, :destroy]
+  before_filter :authorized_personel, only: [:index, :new, :show, :update, :destroy]
   before_action :set_feedback, only: [:show, :edit, :update, :destroy]
 
   def index
