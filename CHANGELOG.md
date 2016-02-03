@@ -6,6 +6,7 @@
 
 **Closed issues:**
 
+- Add SuperUser role [\#10](https://github.com/maxkaplan/tenant-application/issues/10)
 - Application fee payment [\#9](https://github.com/maxkaplan/tenant-application/issues/9)
 
 ## [v0.9](https://github.com/maxkaplan/tenant-application/tree/v0.9) (2016-01-20)
