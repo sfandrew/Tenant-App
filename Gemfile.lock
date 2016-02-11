@@ -1,6 +1,5 @@
-GIT
-  remote: https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git
-  revision: b0eb3fb57ed73a171abc5cfae9a371c43c75a5ed
+PATH
+  remote: ../dynamic-forms-engine
   specs:
     dynamic_forms_engine (0.5)
       bootstrap-datepicker-rails (>= 1.1.1.11)
@@ -465,4 +464,4 @@ DEPENDENCIES
   wkhtmltopdf-binary
 
 BUNDLED WITH
-   1.10.6
+   1.11.2

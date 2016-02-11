@@ -1,21 +1,78 @@
 require 'spec_helper'
 
 describe DynamicFormsEngine::DynamicFormType do
-  describe "when a new form is created" do
-    it "is not valid without fields" do
-      form_type = DynamicFormsEngine::DynamicFormType.new(:name => 'Move out form', :description => 'A form list of stuff to move out')
-      # field.should_not be_valid
-      # expect(field).to eq false
-      expect(form_type.valid?).to eq false
+
+  describe "when a new multi form is created" do
+    it "has a valid tenant factory" do
+      form_type = create(:tenant_application)
+      expect(form_type).to be_valid
     end
+    it "has a valid guarantor factory" do
+      form_type = create(:guarantor_application)
+      expect(form_type).to be_valid
+    end
+  end
+
+  describe "A new form" do
+    it "is invalid without a form name, form type & form fields" do
+      form_type = DynamicFormsEngine::DynamicFormType.new
+       expect(form_type).to_not be_valid
+    end
+  end
+
+  describe "When a multi-step form is created" do
+    it "There must be two field group fields present" do
+      regular_form = create(:tenant_application)
+      expect(regular_form).to be_valid
+    end
+
+    it "is invalid if the first field is not a field group" do
+      form_type = DynamicFormsEngine::DynamicFormType.new(:name => 'blah', :description => 'blah', :form_type => 'Multi-step')
+      form_type.fields << build(:text_field_1)
+      expect(form_type).to be_invalid
+    end
+
+    it "is invalid if the current field is a field group and next field is a field group" do
+      form = create(:form_with_two_field_groups)
+      expect(form).to be_invalid
+    end
+
+  end
+
+end
+
+
+
+
+
+
+
+
+
+
+
+    # it "at least 2 field group fields must be present " do
+    #   skip("will finish this test after we have a valid factory")
+    #   form_type = build(:tenant_application)
+
+    #   fields = build(:multi_step_fields)
+      
+    #   form_type.fields = fields
+      
+    #   # form_type.fields = build(:multi_step_fields)
+
+    #   # field.should_not be_valid
+    #   # expect(field).to eq false
+    #   expect(form_type.valid?).to eq true
+    # end
     # it "it is valid with fields" do
     #   field = DynamicFormType.new(:name => 'Move out form', :description => 'A form list of stuff to move out')
     #   fields = DynamicFormField.create(:name => 'header')
     #   field.fields = fields
     #   field.should be_valid
     # end
-  end
-end
+#   end
+# end
 
 
 # describe DynamicFormEntry do
