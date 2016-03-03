@@ -15,9 +15,11 @@ class TransactionsController < ApplicationController
 		nonce = params[:payment_method_nonce]
 		result = Braintree::Transaction.sale(
 			:amount => 30.00,
-			:payment_method_nonce => nonce
-			)
-
+			:payment_method_nonce => nonce,
+			:options => {
+				:submit_for_settlement => true
+			}
+		)
 		if result.success?
 			Transaction.create(:dynamic_form_entry_id => @entry.id, :braintree_id => result.transaction.id, :payment_type => result.transaction.payment_instrument_type)
 			@entry.update_columns(app_fee_paid: true)
