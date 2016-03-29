@@ -4,8 +4,13 @@ class TransactionsController < ApplicationController
 	before_action :authorized_personel, only: [:index]
 
 	def index
-		@transactions = Transaction.order(created_at: :desc).paginate(:page => params[:page], :per_page => 30)
+		if !params[:search].blank?
+			@transactions = Transaction.search(params[:search]).paginate(:page => params[:page], :per_page => 20)
+		else
+			@transactions = Transaction.includes(:dynamic_form_entry, :user).order(created_at: :desc).paginate(:page => params[:page], :per_page => 20)
+		end
 	end
+		
 
 	def new
 		redirect_to dynamic_forms_engine.dynamic_form_entries_path, alert: 'This application has already been paid' if @entry.payment

@@ -1,0 +1,23 @@
+<fieldset class="well">
+	<%= form_for(:search, url: transactions_path, method: :get) do %>
+		<div class="form-inline">
+			<div class="form-group">
+				<%= label_tag 'Email:', nil %>
+				<%= text_field 'search', 'email', :class => 'form-control' %>
+				<%= label_tag 'Braintree ID:', nil %>
+				<%= text_field 'search', 'braintree_id', :class => 'form-control' %>
+				<%= label_tag 'Submitted Date:', nil %>
+				<%= text_field 'search', 'submitted', :class => 'form-control date-picker' %>
+				<%= submit_tag 'Search', :class => 'btn btn-success' %>
+				<%= link_to 'Reset', transactions_path, :class => 'btn btn-danger' %>
+			</div>
+
+		</div>
+	<% end %>
+</fieldset>
+
+<script type="text/javascript">
+$('.date-picker').datepicker({
+	dateFormat: 'yy-mm-dd'
+});
+</script>

@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :dynamic_form_types, class_name: "DynamicFormsEngine::DynamicFormType"
   has_many :feedbacks
   has_many :contacts
+  has_many :transactions
 
   before_create :set_role
 

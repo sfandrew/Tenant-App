@@ -14,9 +14,6 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-
 gem 'will_paginate-bootstrap'
 
 # Use jquery as the JavaScript library
@@ -42,29 +39,13 @@ gem 'carrierwave'
 gem 'carrierwave_direct'
 gem 'fog'
 gem 'sidekiq'
-
 gem 'exception_notification'
-
 #facebook login
 gem 'omniauth-facebook'
 #gmail login
 gem "omniauth-google-oauth2"
 #app payment
 gem 'braintree'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-
-#ruby "2.1.1"
 
 #DEV - Dynamic Form Gem (via up one dir)
 # gem 'dynamic_forms_engine', :path => '../dynamic-forms-engine'
