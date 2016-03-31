@@ -23,7 +23,7 @@ module TenantApplication
     config.time_zone = 'America/Los_Angeles'
     config.active_record.default_timezone = :local
     
-    config.version_number = 'v1.02'
-    config.version_date = '03/14/2016'
+    config.version_number = 'v1.03'
+    config.version_date = '04/01/2016'
   end
 end

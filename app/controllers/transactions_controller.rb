@@ -13,7 +13,7 @@ class TransactionsController < ApplicationController
 		
 
 	def new
-		redirect_to dynamic_forms_engine.dynamic_form_entries_path, alert: 'This application has already been paid' if @entry.payment
+		redirect_to dynamic_forms_engine.dynamic_form_entries_path, alert: 'This application has already been paid' unless @entry.unpaid_app?
 	end
 
 	def create
@@ -26,7 +26,7 @@ class TransactionsController < ApplicationController
 			}
 		)
 		if result.success?
-			Transaction.create(:dynamic_form_entry_id => @entry.id, :braintree_id => result.transaction.id, :payment_type => result.transaction.payment_instrument_type)
+			Transaction.create(:dynamic_form_entry_id => @entry.id, :braintree_id => result.transaction.id, :payment_type => result.transaction.payment_instrument_type, :user_id => current_user.id)
 			@entry.update_columns(app_fee_paid: true)
 			flash[:notice] = 'Application payment successful!'
 			redirect_to dynamic_forms_engine.dynamic_form_entries_path
