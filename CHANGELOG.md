@@ -4,8 +4,13 @@
 
 [Full Changelog](https://github.com/maxkaplan/tenant-application/compare/v0.9...HEAD)
 
+**Implemented enhancements:**
+
+- Transaction grace period 6 months [\#12](https://github.com/maxkaplan/tenant-application/issues/12)
+
 **Closed issues:**
 
+- Transactions search [\#11](https://github.com/maxkaplan/tenant-application/issues/11)
 - Add SuperUser role [\#10](https://github.com/maxkaplan/tenant-application/issues/10)
 - Application fee payment [\#9](https://github.com/maxkaplan/tenant-application/issues/9)
 
