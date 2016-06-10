@@ -1,6 +1,6 @@
 GIT
   remote: https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git
-  revision: 0916b8c14ceae11a80f7e3609f1dccecc3ef2803
+  revision: 71a7ae4212ffbf06188a6a6b1bd959991be07e2d
   specs:
     dynamic_forms_engine (0.5)
       bootstrap-datepicker-rails (>= 1.1.1.11)
@@ -45,7 +45,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (5.0.1.20140414130214)
-    autoprefixer-rails (6.3.5)
+    autoprefixer-rails (6.3.6.2)
       execjs
     bcrypt (3.1.10)
     better_errors (2.1.1)
@@ -54,7 +54,7 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-datepicker-rails (1.6.0.1)
+    bootstrap-datepicker-rails (1.6.1.1)
       railties (>= 3.0)
     bootstrap-sass (3.3.5)
       autoprefixer-rails (>= 5.0.0.1)
@@ -93,7 +93,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.1.1)
+    coffee-script-source (1.10.0)
     commonjs (0.2.7)
     connection_pool (2.2.0)
     debug_inspector (0.0.2)
@@ -110,7 +110,7 @@ GEM
       actionmailer (>= 3.0.4)
       activesupport (>= 3.0.4)
     excon (0.45.3)
-    execjs (2.5.2)
+    execjs (2.7.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.5.0)
@@ -245,18 +245,20 @@ GEM
       tilt
     less-rails-bootstrap (3.3.5.0)
       less-rails (>= 2.6, <= 2.8)
-    libv8 (3.16.14.13)
-    mail (2.6.3)
-      mime-types (>= 1.16, < 3)
+    libv8 (3.16.14.15)
+    mail (2.6.4)
+      mime-types (>= 1.16, < 4)
     meta_request (0.3.4)
       callsite (~> 0.0, >= 0.0.11)
       rack-contrib (~> 1.1)
       railties (>= 3.0.0, < 5.0.0)
     method_source (0.8.2)
-    mime-types (2.99)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
     mini_portile (0.6.2)
-    minitest (5.8.3)
-    multi_json (1.11.2)
+    minitest (5.9.0)
+    multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     mysql2 (0.3.18)
@@ -324,7 +326,7 @@ GEM
       activesupport (= 4.1.11)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.4.2)
+    rake (11.1.2)
     rdoc (4.2.0)
       json (~> 1.4)
     redis (3.2.1)

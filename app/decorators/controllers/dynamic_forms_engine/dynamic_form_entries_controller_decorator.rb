@@ -23,23 +23,24 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
   #   end
   # end
 
-    def get_buildings
-      uri = URI.parse('https://sfrent.net/tenant_app_api.json')
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = true
-      request = Net::HTTP::Get.new(uri.request_uri)
-      request.basic_auth('tenant_app','sfrent')
-      @building_apartments = http.request(request).body
-    end
 
-    def tenant_applications
-      if params[:last_app_submitted].present?
-        @all_entries = DynamicFormsEngine::DynamicFormEntry.applications_to_be_synced(params[:last_app_submitted])
-      else
-        @all_entries = DynamicFormsEngine::DynamicFormEntry.last_form_type_entries #all form entries
-      end
-      respond_to do |format|
-        format.json { render json: @all_entries, root: false }
-      end
+  def get_buildings
+    uri = URI.parse('https://sfrent.net/tenant_app_api.json')
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    request = Net::HTTP::Get.new(uri.request_uri)
+    request.basic_auth('tenant_app','sfrent')
+    @building_apartments = http.request(request).body
+  end
+
+  def tenant_applications
+    if params[:last_app_submitted].present?
+      @all_entries = DynamicFormsEngine::DynamicFormEntry.applications_to_be_synced(params[:last_app_submitted])
+    else
+      @all_entries = DynamicFormsEngine::DynamicFormEntry.last_form_type_entries #all form entries
     end
+    respond_to do |format|
+      format.json { render json: @all_entries, root: false }
+    end
+  end
 end

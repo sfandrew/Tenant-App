@@ -14,6 +14,8 @@ Rails.application.configure do
   config.tenant_app_id = 33
   # guarantor application id
   config.guarantor_app_id = 34
+  #claridge application id
+  config.cla_app_id = 35
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false

@@ -20,12 +20,17 @@
 				<% if user_signed_in? %>
 					<li>
 						<%= link_to(dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.application.config.tenant_app_id), :class => 'form-link') do  %>
-						Start NEW Rental Application <span class="glyphicon glyphicon-pencil"></span>
+						Start Rental Application <span class="glyphicon glyphicon-pencil"></span>
 						<% end %>
 					</li>
 					<li>
 						<%= link_to(dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.application.config.guarantor_app_id), :class => 'form-link') do  %>
-						Start NEW Guarantor Application  <span class="glyphicon glyphicon-pencil"></span>
+						Start Guarantor Application  <span class="glyphicon glyphicon-pencil"></span>
+						<% end %>
+					</li>
+					<li>
+						<%= link_to(dynamic_forms_engine.new_dynamic_form_entry_path(:dynamic_form_type_id => Rails.application.config.cla_app_id), :class => 'form-link') do  %>
+						Start Claridge Application  <span class="glyphicon glyphicon-pencil"></span>
 						<% end %>
 					</li>
 					<li>

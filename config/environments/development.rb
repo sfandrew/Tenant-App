@@ -12,6 +12,8 @@ Rails.application.configure do
   config.tenant_app_id = 1
   # guarantor applicaiton id
   config.guarantor_app_id = 3
+  # claridge application id
+  config.cla_app_id = 4
   
   # Do not eager load code on boot.
   config.eager_load = false
