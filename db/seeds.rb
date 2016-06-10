@@ -1,5 +1,5 @@
 claridge_app = DynamicFormsEngine::DynamicFormType.new(
-    {name: "Claridge Tenant Application", description: "Complete applications are time sensitive with priority given to those with earnest money deposits. When your application is complete please submit it. Any questions please e-mail applications@sfrent.net", uuid: nil, user_id: 3, form_type: "Multi-step", is_public: false}
+    {name: "Claridge Tenant Application", description: "Complete applications are time sensitive with priority given to those with earnest money deposits. When your application is complete please submit it. Any questions please e-mail applications@sfrent.net", uuid: nil, user_id: 3, form_type: "Multi-step", is_public: false},
 )
 
 claridge_app.fields.build!([
