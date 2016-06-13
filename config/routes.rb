@@ -38,6 +38,8 @@ Rails.application.routes.draw do
 
   root 'home#home_page'
 
+  get 'home/landing_page', to: 'home#landing_page'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
