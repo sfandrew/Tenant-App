@@ -1,6 +1,6 @@
 GIT
   remote: https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git
-  revision: 71a7ae4212ffbf06188a6a6b1bd959991be07e2d
+  revision: 2a6ccb90823c31f70670770c31aaeee75bca7e73
   specs:
     dynamic_forms_engine (0.5)
       bootstrap-datepicker-rails (>= 1.1.1.11)
@@ -465,5 +465,8 @@ DEPENDENCIES
   will_paginate-bootstrap
   wkhtmltopdf-binary
 
+RUBY VERSION
+   ruby 2.2.4p230
+
 BUNDLED WITH
-   1.11.2
+   1.12.5
