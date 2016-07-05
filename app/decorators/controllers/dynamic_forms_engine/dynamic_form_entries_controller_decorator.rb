@@ -40,7 +40,7 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
       @all_entries = DynamicFormsEngine::DynamicFormEntry.last_form_type_entries #all form entries
     end
     respond_to do |format|
-      format.json { render json: @all_entries }
+      format.json { render json: @all_entries, root: false }
     end
   end
 end
