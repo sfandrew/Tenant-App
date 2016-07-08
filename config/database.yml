@@ -7,15 +7,16 @@
 
 #MYSQL
 development:
-  adapter: mysql2
+  adapter: postgresql
   database: tenant_application_development 
-  username: root
+  host: localhost
+  port: 5432
+  username: osboxes
   password: fsckj00
-  pool: 5
-  socket: /var/lib/mysql/mysql.sock
+  # socket: /var/lib/mysql/mysql.sock
 
 test:
-  adapter: mysql2
+  adapter: postgresql
   database: tenant_application_development
   username: root
   password: fsckj00

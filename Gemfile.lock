@@ -1,6 +1,6 @@
 GIT
   remote: https://4be3166eb32f5bbd09980a6e111815d526767f64:x-oauth-basic@github.com/maxkaplan/dynamic-forms-engine.git
-  revision: 2a6ccb90823c31f70670770c31aaeee75bca7e73
+  revision: 84407f88d5ac3873d81e63f8ce6fed3e8c1f2dc7
   specs:
     dynamic_forms_engine (0.5)
       bootstrap-datepicker-rails (>= 1.1.1.11)
@@ -45,7 +45,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (5.0.1.20140414130214)
-    autoprefixer-rails (6.3.6.2)
+    autoprefixer-rails (6.3.7)
       execjs
     bcrypt (3.1.10)
     better_errors (2.1.1)
@@ -261,7 +261,6 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mysql2 (0.3.18)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -440,7 +439,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   meta_request
-  mysql2
   omniauth-facebook
   omniauth-google-oauth2
   pg

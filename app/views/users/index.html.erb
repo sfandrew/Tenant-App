@@ -1,5 +1,7 @@
 <h1>Listing users</h1>
 
+<%= render partial: 'search_users' %>
+
 <% unless @users.blank? %>
 	<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
 	<%= render partial: 'list_users', locals: { user: @users} %>

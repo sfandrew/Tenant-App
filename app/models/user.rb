@@ -62,6 +62,27 @@ class User < ActiveRecord::Base
 		Contact.where(email: self.email).pluck(:id)
 	end
 
+  def self.search(terms)
+    search_query = User.includes(:dynamic_form_entries)
+
+    if(!terms[:terms].blank?)
+      search_query = User.includes(:dynamic_form_entries).order("#{terms[:order_by]} #{terms[:order]}")
+    end
+
+    if !terms[:start].blank? && !terms[:end].blank?
+      date_start = Date.strptime(terms[:start], '%m/%d/%Y')
+      date_end = Date.strptime(terms[:end], '%m/%d/%Y')
+          
+      search_query = search_query.where("created_at" => date_start..date_end)
+    end
+
+    if !terms[:email].blank?
+      search_query = search_query.where("email like ?", "%#{terms[:email]}%")
+    end
+
+    return search_query
+  end
+
   private
 
     def set_role

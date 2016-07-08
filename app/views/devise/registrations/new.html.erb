@@ -14,19 +14,21 @@
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                            <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email" %>
+                            <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email", :required => true %>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                            <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %>
+                            <%= f.password_field :password, autocomplete: "off",  :class => "form-control pw", :placeholder => "Create Password", 
+                            														:data => { :toggle => 'popover', :placement => 'top', :trigger => 'focus', :content => 'Password Length must be at least 8 characters'} %>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-ok"></span></span>
-                            <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "Re-type your password" %>
+                            <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control cpw", :placeholder => "Re-type your password",
+                            														:data => { :toggle => 'popover', :placement => 'top', :trigger => 'focus', :content => 'Password confirmation must match'} %>
                         </div>
                     </div>
 
@@ -57,7 +59,7 @@
         </div>
     </div>
 <% end %>
-
-
-
-
+<script type="text/javascript">
+$('.pw').popover();
+$('.cpw').popover();
+</script>

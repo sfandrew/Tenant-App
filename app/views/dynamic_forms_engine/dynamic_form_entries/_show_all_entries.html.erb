@@ -1,0 +1,51 @@
+
+<%= will_paginate @entries, renderer: BootstrapPagination::Rails %>
+
+<div class="table">
+  <table class="table table-striped table-hover entries-table">
+    <thead>
+      <tr class="info">
+        <th>Type</th>
+        <th>Status</th>
+        <th>Application fee Paid on<br><small>Covers up to 6 months</small>
+        </th>
+        <th>Building</th>
+        <th>Unit</th>
+        <th>Submitted</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if !@entries.blank? %>
+        <% @entries.each do |dynamic_form_entry| %>
+          <tr>
+            <td><strong><%= dynamic_form_entry.dynamic_form_type.try(:name) %></strong></td>
+            <td>
+              <% if dynamic_form_entry.in_progress %>
+                <% if current_user.authorized_users? && current_user != dynamic_form_entry.user %>
+                  <%=  link_to 'IN DRAFT', dynamic_form_entry, :class => 'btn btn-danger' %>
+                <% else %>
+                  <%=link_to 'IN DRAFT', edit_dynamic_form_entry_path(dynamic_form_entry), :class => 'btn btn-danger' %>
+                <% end %>
+              <% else %>
+                <%= link_to 'SUBMITTED', dynamic_form_entry, :class => 'btn btn-success' %> 
+              <% end %>
+            </td>
+            <td><%= payment_status dynamic_form_entry %></td>
+            <td><%= dynamic_form_entry.get_building_name(@building_apartments) %></td>
+            <td><%= dynamic_form_entry.try(:get_building_size) %></td>
+            <td>
+              <%= dynamic_form_entry.updated_at.strftime(" %l:%M %p %b. %d, %Y") %>
+            </td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td>You have no entries!</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= will_paginate @entries, renderer: BootstrapPagination::Rails %>

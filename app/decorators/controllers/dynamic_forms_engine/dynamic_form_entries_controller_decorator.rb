@@ -3,11 +3,11 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
 
   require "net/http"
   require "uri"
+  require "attachment"
 
   skip_before_filter :authenticate_user!, only: [:tenant_applications]
-  # before_filter :autocomplete_feature, only: [:new, :edit,:create, :update]
-  before_filter :get_buildings, only: [:new, :edit, :create, :update, :show, :index]
-  # before_filter :get_contacts, only: [:show]
+  before_filter :get_buildings, only: [:new, :edit, :create, :update, :show, :index, :all_entries]
+  before_filter :authorized_personel, only: [:all_entries]
 
   def get_contacts
     @contacts = Contact.where(id: Contactable.select(:contact_id).where(:contactable_type => "DynamicFormsEngine::DynamicFormEntry",:contactable_id => params[:id]))
@@ -22,6 +22,14 @@ DynamicFormsEngine::DynamicFormEntriesController.class_eval do
   #       @contact_names = @contacts_hash.keys
   #   end
   # end
+
+  def all_entries
+    if params[:search]
+       @entries = DynamicFormsEngine::DynamicFormEntry.includes(:dynamic_form_type).order(created_at: :desc).search(params[:search]).paginate(:page => params[:page], :per_page => 30)
+    else
+      @entries = DynamicFormsEngine::DynamicFormEntry.includes(:dynamic_form_type).order(created_at: :desc).paginate(:page => params[:page], :per_page => 30)
+    end
+  end
 
 
   def get_buildings

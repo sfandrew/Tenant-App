@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160326012841) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "attachments", force: true do |t|
     t.integer  "user_id"
     t.integer  "attachable_id"
@@ -103,7 +106,7 @@ ActiveRecord::Schema.define(version: 20160326012841) do
     t.integer  "dynamic_form_entry_id"
     t.string   "braintree_id"
     t.string   "payment_type"
-    t.decimal  "amount",                precision: 10, scale: 0
+    t.decimal  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"

@@ -52,9 +52,17 @@
 
 					<div class="form-group">
                     	<div class="col-md-12 control">
-                        	<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">Didn't receive confirmation email?
-                            	<%= link_to "Click here", new_confirmation_path(resource_name), :class => 'primary' %>
-                            	<%= link_to "Forgot your password?", new_password_path(resource_name) %>
+                        	<div style="border-top: 1px solid#888; padding-top:15px;">
+                        		<div class="form-group">
+                        			<a class="btn btn-block btn-primary" href="<%= new_confirmation_path(resource_name) %>">
+                        				<i class="fa fa-envelope"></i> Click here if you did not receive confirmation email
+                        			</a>
+                    			</div>
+                    			<div class="form-group">
+                        			<a class="btn btn-block btn-warning" href="<%= new_password_path(resource_name) %>">
+                        				<i class="fa fa-lock"></i> Forgot your password?
+                        			</a>
+                    			</div>
                         	</div>
                     	</div>
                 	</div>

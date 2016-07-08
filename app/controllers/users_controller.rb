@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   before_action :authorized_superusers, only: [:edit, :update]
 
   def index
-    @users = User.order(last_sign_in_at: :desc).includes(:dynamic_form_entries).paginate(:page => params[:page], :per_page => 30)
+    if params[:search]
+      @users = User.order(last_sign_in_at: :desc).includes(:dynamic_form_entries).search(params[:search]).paginate(:page => params[:page], :per_page => 30)
+    else
+      @users = User.order(last_sign_in_at: :desc).includes(:dynamic_form_entries).paginate(:page => params[:page], :per_page => 30)
+    end
   end
 
   def show

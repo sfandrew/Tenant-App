@@ -17,7 +17,7 @@ class DynamicFormsEngine::DynamicFormEntrySerializer < ActiveModel::Serializer
 		  		elsif value[:type] == "file_upload"
 		  			attachment = object.attachments.find { |file_upload| file_upload.content_meta == value[:id] }
 		  			entry[field_group_name][value[:name]] = attachment.filename.url unless attachment.nil?
-		  		else 
+		  		else
 		  			entry[field_group_name][value[:name]] = value[:value]
 		  		end
 

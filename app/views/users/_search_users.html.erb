@@ -1,0 +1,32 @@
+<fieldset class="well">
+  <%= form_for(:search, :url => users_path, :html => { :method => :get }) do  %>
+    <div class="row">
+      <div class="col-xs-3 col-sm-3">
+        <%= text_field 'search', 'email', :value => params[:search] ? params[:search][:email] : '', :class => "col-xs-6 form-control", :placeholder => "Search Email" %>
+      </div>
+      <div class="col-md-3">
+        <div class="input-daterange input-group date">
+          <%= text_field 'search', 'start', :class => "form-control", :placeholder => "Start Date", :value => params[:search] ? params[:search][:start] : '' %>
+          <span class="input-group-addon">to</span>
+           <%= text_field 'search', 'end', :class => "form-control", :placeholder => "End Date", :value => params[:search] ? params[:search][:end] : '' %>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-sm-3">
+        <div class="btn-group pull-right">
+          <%= link_to "Reset", users_path, :class => 'btn btn-danger' %>
+          <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> Search</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</fieldset>
+
+<script type="text/javascript">
+$('.date input').datepicker({
+  changeMonth: true,
+  changeYear: true,
+  yearRange: "1905:2050",
+  showAnim: "blind"
+});
+</script>

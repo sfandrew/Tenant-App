@@ -1,0 +1,39 @@
+<fieldset class="well">
+  <%= form_for(:search, :url => all_entries_dynamic_form_entries_path, :html => { :method => :get }) do  %>
+    <div class="row">
+      <div class="col-xs-6 col-sm-3">
+    
+        <%= select("search","application_type", options_for_select([['Tenant Application', Rails.application.config.tenant_app_id], ['Guarantor Application', Rails.application.config.guarantor_app_id], 
+                                              ['Claridge Application', Rails.application.config.cla_app_id]], :selected => params[:search] ? params[:search][:application_type] : ''), 
+                                                              {:prompt => 'Select Form Type'},:class => 'form-control')  %>
+
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <%= select("search","status", options_for_select([['In Draft', true], ['Completed', false]],  :selected => params[:search] ? params[:search][:status] : ''), {:prompt => 'Select Form Status'}, :class => 'form-control')  %>
+      </div>
+      <div class="col-md-3">
+        <div class="input-daterange input-group date">
+          <%= text_field 'search', 'start', :class => "form-control", :placeholder => "Start Date", :value => params[:search] ? params[:search][:start] : '' %>
+          <span class="input-group-addon">to</span>
+           <%= text_field 'search', 'end', :class => "form-control", :placeholder => "End Date", :value => params[:search] ? params[:search][:end] : '' %>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-sm-3">
+        <div class="btn-group pull-right">
+          <%= link_to "Reset", all_entries_dynamic_form_entries_path, :class => 'btn btn-danger' %>
+          <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> Search</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</fieldset>
+
+<script type="text/javascript">
+$('.date input').datepicker({
+  changeMonth: true,
+  changeYear: true,
+  yearRange: "1905:2050",
+  showAnim: "blind"
+});
+</script>
