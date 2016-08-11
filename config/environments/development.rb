@@ -58,10 +58,10 @@ Rails.application.configure do
     :authentication => :plain,
   }
 
-  Rails.application.config.middleware.use ExceptionNotification::Rack,
-  :email => {
-    :sender_address => %{"andrew@sfrent.net},
-  }
+  # Rails.application.config.middleware.use ExceptionNotification::Rack,
+  # :email => {
+  #   :sender_address => %{"andrew@sfrent.net},
+  # }
 
   Braintree::Configuration.environment = :sandbox
   Braintree::Configuration.merchant_id = ENV['BRAINTREE_MERCHANT_ID']
