@@ -16,6 +16,10 @@ FactoryGirl.define do
       field_type "text_field"
     end
 
+    factory :contacts_field_1 do
+      field_type "contacts"
+    end
+
     factory :field_group_2 do
       field_type "field_group"
     end

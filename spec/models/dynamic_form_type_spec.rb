@@ -2,7 +2,31 @@ require 'spec_helper'
 
 describe DynamicFormsEngine::DynamicFormType do
 
-  describe "when a new multi form is created" do
+	describe "A new form type" do
+		before(:each) do
+			@new_form = DynamicFormsEngine::DynamicFormType.new
+		end
+
+		it "is not valid without a name" do
+			@new_form.name = nil
+			expect(@new_form).to_not be_valid
+		end
+
+		it "is not valid without a description" do
+			@new_form.description = nil
+			expect(@new_form).to_not be_valid
+		end
+
+		it "it not valid without any fields" do
+			no_fields = @new_form.fields.size
+			expect(no_fields).to eq(0)
+		end
+	end
+
+	
+
+
+  describe "when a new multi form is built" do
     it "has a valid tenant factory" do
       form_type = create(:tenant_application)
       expect(form_type).to be_valid
@@ -32,10 +56,20 @@ describe DynamicFormsEngine::DynamicFormType do
       expect(form_type).to be_invalid
     end
 
-    it "is invalid if the current field is a field group and next field is a field group" do
-      form = create(:form_with_two_field_groups)
-      expect(form).to be_invalid
+    it "is invalid if the last field is a field group" do
+      form = build(:form_with_two_field_groups)
+      expect(form).to_not be_valid
     end
+  end
+
+  describe "When a public form is built" do
+  	context 'with a multi step form type' do
+  		it "it is not valid if the field contains contacts and or file upload" do
+  		form = DynamicFormsEngine::DynamicFormType.new(:name => 'foo', :description => 'bar', :form_type => 'Multi-step')
+ 
+  		end
+  	end
+  	
 
   end
 

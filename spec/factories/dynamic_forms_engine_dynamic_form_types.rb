@@ -40,7 +40,7 @@ FactoryGirl.define do
   end
 
   factory :form_with_two_field_groups, class: DynamicFormsEngine::DynamicFormType do
-    name "Some form"
+    name "Tenant Application"
     description "More info"
     form_type "Multi-step"
 

@@ -27,9 +27,11 @@
 /config/private.pem
 
 server.csr
+server.crt
 server.key
 server.pass.key
 a_tenant_today.crt
+a_tenant_today.ca-bundle
 
 #Ignore brakeman
 brakeman.html
